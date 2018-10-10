@@ -35,7 +35,7 @@ until the goal node has been reached.
 
 ## SIP process link:
 
-https://docs.google.com/spreadsheets/d/15y1zCEGfbNPBTr2xY7Hjac2PuRlEzobuQ20Mx1qXSsk/edit#gid=707093132
+https://docs.google.com/spreadsheets/d/15y1zCEGfbNPBTr2xY7Hjac2PuRlEzobuQ20Mx1qXSsk/edit#gid=0
 
 ## License 
 
