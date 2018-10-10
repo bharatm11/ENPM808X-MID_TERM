@@ -1,7 +1,7 @@
 # ENPM808X-MID_TERM
 
 [![Build Status](https://travis-ci.org/bharatm11/ENPM808X-MID_TERM.svg?branch=master)](https://travis-ci.org/bharatm11/ENPM808X-MID_TERM)
-[![Coverage Status][![Coverage Status](https://coveralls.io/repos/github/bharatm11/ENPM808X-MID_TERM/badge.svg?branch=master)](https://coveralls.io/github/bharatm11/ENPM808X-MID_TERM?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/bharatm11/ENPM808X-MID_TERM/badge.svg?branch=master)](https://coveralls.io/github/bharatm11/ENPM808X-MID_TERM?branch=master)
 ---
 
 ## Overview
