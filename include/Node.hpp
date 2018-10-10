@@ -28,11 +28,88 @@ private:
 
 public:
   /**
-  * @brief Constric
+  * @brief <brief>
   * @param [in] <name> <parameter_description>
   * @return <return_description>
   * @details <details>
   */
+  void SetParent(int index);
+
+  /**
+  * @brief <brief>
+  * @param [in] <name> <parameter_description>
+  * @return <return_description>
+  * @details <details>
+  */
+  int GetParent(int index);
+
+  /**
+  * @brief <brief>
+  * @param [in] <name> <parameter_description>
+  * @return <return_description>
+  * @details <details>
+  */
+  void SetF(double f);
+
+  /**
+  * @brief <brief>
+  * @param [in] <name> <parameter_description>
+  * @return <return_description>
+  * @details <details>
+  */
+  void SetG(double g);
+
+  /**
+  * @brief <brief>
+  * @param [in] <name> <parameter_description>
+  * @return <return_description>
+  * @details <details>
+  */
+  void SetH(double h);
+
+  /**
+  * @brief <brief>
+  * @param [in] <name> <parameter_description>
+  * @return <return_description>
+  * @details <details>
+  */
+  void GetF(double f);
+
+  /**
+  * @brief <brief>
+  * @param [in] <name> <parameter_description>
+  * @return <return_description>
+  * @details <details>
+  */
+  void GetG(double g);
+
+  /**
+  * @brief <brief>
+  * @param [in] <name> <parameter_description>
+  * @return <return_description>
+  * @details <details>
+  */
+  void GetH(double h);
+
+  /**
+  * @brief <brief>
+  * @param [in] <name> <parameter_description>
+  * @return <return_description>
+  * @details <details>
+  */
+  location GetLocation();
+
+  /**
+  * @brief <brief>
+  * @param [in] <name> <parameter_description>
+  * @return <return_description>
+  * @details <details>
+  */
+  void SetLocation(Location node_location);
+
+
+
+
 
 
 }
