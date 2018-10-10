@@ -1,7 +1,7 @@
 # ENPM808X-MID_TERM
 
-[![Build Status](https://travis-ci.org/dpiet/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/dpiet/cpp-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/dpiet/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
+[![Build Status](https://travis-ci.org/bharatm11/ENPM808X-MID_TERM.svg?branch=master)](https://travis-ci.org/bharatm11/ENPM808X-MID_TERM)
+[![Coverage Status][![Coverage Status](https://coveralls.io/repos/github/bharatm11/ENPM808X-MID_TERM/badge.svg?branch=master)](https://coveralls.io/github/bharatm11/ENPM808X-MID_TERM?branch=master)
 ---
 
 ## Overview
@@ -125,5 +125,4 @@ perspetive view (or Windows->Perspective->Open Perspective->C/C++).
 - Git
 
     It is possible to manage version control through Eclipse and the git plugin, but it typically requires creating another project. If you're interested in this, try it out yourself and contact me on Canvas.
-
 
