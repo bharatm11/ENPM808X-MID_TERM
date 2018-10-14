@@ -16,15 +16,15 @@ struct Location {
   int x=0;
   int y=0;
 
-}
+};
 
 class Node {
 private:
-  double F=0;
-  double G=0;
-  double H=0;
-  Location location;
-  int parent;
+  int f_ = 0;
+  int g_ = 0;
+  int h_ = 0;
+  Location location_;
+  int parent_;
 
 public:
   /**
@@ -41,7 +41,7 @@ public:
   * @return <return_description>
   * @details <details>
   */
-  int GetParent(int index);
+  int GetParent();
 
   /**
   * @brief <brief>
@@ -49,7 +49,7 @@ public:
   * @return <return_description>
   * @details <details>
   */
-  void SetF(double f);
+  void SetF(int f);
 
   /**
   * @brief <brief>
@@ -57,7 +57,7 @@ public:
   * @return <return_description>
   * @details <details>
   */
-  void SetG(double g);
+  void SetG(int g);
 
   /**
   * @brief <brief>
@@ -65,7 +65,7 @@ public:
   * @return <return_description>
   * @details <details>
   */
-  void SetH(double h);
+  void SetH(int h);
 
   /**
   * @brief <brief>
@@ -73,7 +73,7 @@ public:
   * @return <return_description>
   * @details <details>
   */
-  void GetF(double f);
+  int GetF();
 
   /**
   * @brief <brief>
@@ -81,7 +81,7 @@ public:
   * @return <return_description>
   * @details <details>
   */
-  void GetG(double g);
+  int GetG();
 
   /**
   * @brief <brief>
@@ -89,7 +89,7 @@ public:
   * @return <return_description>
   * @details <details>
   */
-  void GetH(double h);
+  int GetH();
 
   /**
   * @brief <brief>
@@ -97,7 +97,7 @@ public:
   * @return <return_description>
   * @details <details>
   */
-  location GetLocation();
+  Location GetLocation();
 
   /**
   * @brief <brief>
@@ -107,9 +107,6 @@ public:
   */
   void SetLocation(Location node_location);
 
+};
+#endif
 
-
-
-
-
-}
