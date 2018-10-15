@@ -2,7 +2,7 @@
  * @file Lists.hpp
  * @author  Royneal Rayess, Bharat Mathur
  * @date 14 Oct 2018
- * @copyright 2018  Royneal Rayess
+ * @copyright 2018  Royneal Rayess, Bharat Mathur
  * @brief This file defines the methods for class "Lists"
  * This class OpenList contains data members and methods applicable
  * for the A* path planning algorithm

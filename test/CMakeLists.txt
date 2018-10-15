@@ -8,8 +8,6 @@ add_executable(
     ../app/Lists.cpp
     ../app/OpenList.cpp
     ../app/ClosedList.cpp
-    ../app/Map.cpp
-						
 )
 
 target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include 

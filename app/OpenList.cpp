@@ -2,7 +2,7 @@
  * @file Lists.hpp
  * @author  Royneal Rayess, Bharat Mathur
  * @date 14 Oct 2018
- * @copyright 2018  Royneal Rayess
+ * @copyright 2018  Royneal Rayess, Bharat Mathur
  * @brief This file defines the methods for class "Lists"
  * This class OpenList contains data members and methods applicable
  * for the A* path planning algorithm
@@ -53,8 +53,8 @@ bool OpenList::InList(const vector<Node>& list, const int& id) {
  * @details <details>
  */
 vector<Node>::size_type OpenList::IsLowestF(vector<Node>& list) {
-  vector<Node>::size_type i = list.size();
-  vector<Node>::size_type lowest_f = list.size();
+  vector<Node>::size_type i = list.size() - 1;
+  vector<Node>::size_type lowest_f = list.size() - 1;
 
   this->SortList(list);  //sort according to F value in decending order
 

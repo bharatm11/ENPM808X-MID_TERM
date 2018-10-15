@@ -2,60 +2,94 @@
 #include <Lists.hpp>
 #include <Node.hpp>
 #include <OpenList.hpp>
+#include <ClosedList.hpp>
 
 /*TEST(TestCaseName, TestName) {
  ... test body ...
  }*/
 
 
- TEST(NodeTest,Baseline) {
+ TEST(NodeTest, GetG) {
   Node my_node;
-
   ASSERT_EQ(0, my_node.GetG())<<"Checking GetG()";
-  ASSERT_EQ(0, my_node.GetF())<<"Checking GetF()";
-  ASSERT_EQ(0, my_node.GetH())<<"Checking GetH()";
-  ASSERT_EQ(0, my_node.GetParent())<<"Checking GetParent";
-  // ASSERT_EQ(0, my_node.GetLocation());
-
 }
 
- TEST(NodeTest, AssignValues) {
+TEST(NodeTest, GetF) {
+  Node my_node;
+  ASSERT_EQ(0, my_node.GetF())<<"Checking GetF()";
+}
+
+TEST(NodeTest, GetH) {
+  Node my_node;
+  ASSERT_EQ(0, my_node.GetH())<<"Checking GetH()";
+}
+
+TEST(NodeTest, GetParent) {
+  Node my_node;
+  ASSERT_EQ(0, my_node.GetParent())<<"Checking GetParent";
+}
+ 
+
+ TEST(NodeTest, SetParent) {
   Node my_node;
   Location my_location;
+
+  EXPECT_EQ(0, my_node.GetParent());
+  my_node.SetParent(2);
+  EXPECT_EQ(2, my_node.GetParent());
+}
+
+TEST(NodeTest, SetLocation) {
+  Node my_node;
+  Location my_location;
+
   my_location.x = 1;
   my_location.y = 1;
-  
-  my_node.SetF(14);
-  my_node.SetG(10);
-  my_node.SetH(4);
-  my_node.SetParent(2);
+  EXPECT_EQ(0, my_node.GetLocation().x);
+  EXPECT_EQ(0, my_node.GetLocation().y);
   my_node.SetLocation(my_location);
-
-  EXPECT_EQ(14, my_node.GetF());
-  EXPECT_EQ(10, my_node.GetG());
-  EXPECT_EQ(4, my_node.GetH());
   EXPECT_EQ(my_location.x, my_node.GetLocation().x);
   EXPECT_EQ(my_location.y, my_node.GetLocation().y);
 
+
+}
+
+TEST(NodeTest, SetF) {
+  Node my_node;
+  Location my_location;
+
+  EXPECT_EQ(0, my_node.GetF());
+  my_node.SetF(14);
+  EXPECT_EQ(14, my_node.GetF());
+}
+
+TEST(NodeTest, SetG) {
+  Node my_node;
+  Location my_location;
+
+  EXPECT_EQ(0, my_node.GetG());
+  my_node.SetG(10);
+  EXPECT_EQ(10, my_node.GetG());
  }
 
+TEST(NodeTest, SetH) {
+  Node my_node;
+  Location my_location;
+
+  EXPECT_EQ(0, my_node.GetH());
+  my_node.SetH(4);
+  EXPECT_EQ(4, my_node.GetH());
+
+}
 
 TEST(ListsTest, AddNodes) {
   Lists my_list;
   Node my_node, my_node2;
-  Location my_location;
-  my_location.x = 4;
-  my_location.y = 2;
-
-  my_node.SetF(4);
-  my_node.SetG(2);
-  my_node.SetH(2);
-  my_node.SetParent(3);
-  my_node.SetLocation(my_location);
 
   vector<Node> Open_list;
   vector<Node>& O_list = Open_list;
   vector<Node>::size_type list_size = 2;
+
   my_list.Add(O_list, my_node);
   my_list.Add(O_list, my_node2);
 
@@ -67,15 +101,6 @@ TEST(ListsTest, AddNodes) {
 TEST(ListsTest, RemoveNodes) {
   Lists my_list;
   Node my_node, my_node2;
-  Location my_location;
-  my_location.x = 4;
-  my_location.y = 2;
-
-  my_node.SetF(4);
-  my_node.SetG(2);
-  my_node.SetH(2);
-  my_node.SetParent(3);
-  my_node.SetLocation(my_location);
 
   vector<Node> Open_list;
   vector<Node>& O_list = Open_list;
@@ -85,10 +110,10 @@ TEST(ListsTest, RemoveNodes) {
   vector<Node>::size_type list_size = 2;
   vector<Node>::iterator iter = Open_list.begin();
 
-  ASSERT_EQ(list_size, Open_list.size())<< "verify data size equals 2";
+  ASSERT_EQ(list_size, Open_list.size());
   list_size = 1;
   my_list.Remove(O_list, iter);
-  ASSERT_EQ(list_size, Open_list.size())<< "verify data size reduced to 1";
+  ASSERT_EQ(list_size, Open_list.size());
 }
 
 
@@ -106,13 +131,275 @@ TEST(ListsTest, SortNodes) {
   my_list.Add(O_list, my_node);
   my_list.Add(O_list, my_node2);
   my_list.Add(O_list, my_node3);
+
   i = 0;
-  EXPECT_EQ(3,Open_list[i].GetF())
-      << "verify data inserted in vector properly";
+  EXPECT_EQ(3, Open_list[i].GetF());
+
   i = 2;
   my_list.SortList(O_list);
-  EXPECT_EQ(3, Open_list[i].GetF())
-      << "verify data was sorted in vector properly";
+  EXPECT_EQ(3, Open_list[i].GetF());
 
+}
+
+TEST(OpenList,CheckInList) {
+  // create a list 
+  // create a node
+  // add node to list
+  // check for right node should return true
+  // check for node in empty vector should return false
+  // check for wrong node in vector should return false
+  //  bool InList(const vector<Node>& list, const int& id);
+
+  OpenList list;
+  vector<Node> Open_list;
+  vector<Node>& O_list = Open_list;
+
+  Node node1, node2, node3, node4;
+  node1.SetId(1);
+  node2.SetId(2);
+  node3.SetId(3);
+
+  list.Add(O_list, node1);
+  list.Add(O_list, node2);
+  list.Add(O_list, node3);
+
+  int id = 1;
+  int & idref = id;
+
+  EXPECT_TRUE(list.InList(O_list, idref));
+  id = 2;
+  EXPECT_TRUE(list.InList(O_list, idref));
+  id = 3;
+  EXPECT_TRUE(list.InList(O_list, idref));
+  id = 4;
+  EXPECT_FALSE(list.InList(O_list, idref));
+
+}
+
+/*
+TEST(OpenList,IsLoswestF_Case1) {
+//create a list
+//create multiple nodes
+//add nodes to list
+//case 1- all Fs are different
+//case 2- two Fs are same different H values last elment lowest H
+//case 3- two Fs are same , different H values second to last element lowest H
+//case 4- two Fs are same equal H values 
+//case 5- 3 Fs are the same all different H
+
+  OpenList list;
+  vector<Node> Open_list;
+  vector<Node>::size_type i;
+  vector<Node>& O_list = Open_list;
+
+  Node node1, node2, node3, node4;
+  node1.SetId(1);
+  node1.SetF(1);
+  node1.SetH(1);
+  node2.SetId(2);
+  node2.SetF(2);
+  node2.SetH(2);
+  node3.SetId(3);
+  node3.SetF(3);
+  node3.SetH(3);
+  node4.SetId(4);
+  node4.SetF(4);
+  node4.SetH(4);
+
+  list.Add(O_list, node4);
+  list.Add(O_list, node3);
+  list.Add(O_list, node2);
+  list.Add(O_list, node1);
+
+  i = 0;
+  EXPECT_EQ(i, list.IsLowestF(Open_list));
+
+}
+ */
+TEST(OpenList,IsLoswestF_Case2) {
+//create a list
+//create multiple nodes
+//add nodes to list
+//case 1- all Fs are different
+//case 2- two Fs are same different H values last elment lowest H
+//case 3- two Fs are same , different H values second to last element lowest H
+//case 4- two Fs are same equal H values
+//case 5- 3 Fs are the same all different H
+
+  OpenList list;
+  vector<Node> Open_list;
+  vector<Node>::size_type i;
+  vector<Node>& O_list = Open_list;
+
+  Node node1, node2, node3, node4;
+  node1.SetId(1);
+  node1.SetF(1);
+  node1.SetH(4);
+  node2.SetId(2);
+  node2.SetF(2);
+  node2.SetH(2);
+  node3.SetId(3);
+  node3.SetF(4);
+  node3.SetH(3);
+  node4.SetId(4);
+  node4.SetF(4);
+  node4.SetH(1);
+
+  list.Add(O_list, node1);
+  list.Add(O_list, node2);
+  list.Add(O_list, node3);
+  list.Add(O_list, node4);
+
+  i = 3;
+  EXPECT_EQ(i, list.IsLowestF(Open_list));
+
+}
+
+TEST(OpenList,IsLoswestF_Case3) {
+//create a list
+//create multiple nodes
+//add nodes to list
+//case 1- all Fs are different
+//case 2- two Fs are same different H values last elment lowest H
+//case 3- two Fs are same , different H values second to last element lowest H
+//case 4- two Fs are same equal H values
+//case 5- 3 Fs are the same all different H
+
+  OpenList list;
+  vector<Node> Open_list;
+  vector<Node>::size_type i;
+  vector<Node>& O_list = Open_list;
+
+  Node node1, node2, node3, node4;
+  node1.SetId(1);
+  node1.SetF(1);
+  node1.SetH(1);
+  node2.SetId(2);
+  node2.SetF(2);
+  node2.SetH(2);
+  node3.SetId(3);
+  node3.SetF(4);
+  node3.SetH(3);
+  node4.SetId(4);
+  node4.SetF(4);
+  node4.SetH(4);
+
+  list.Add(O_list, node1);
+  list.Add(O_list, node2);
+  list.Add(O_list, node3);
+  list.Add(O_list, node4);
+
+  i = 2;
+  EXPECT_EQ(i, list.IsLowestF(Open_list));
+
+}
+/*
+TEST(OpenList,IsLoswestF_Case4) {
+//create a list
+//create multiple nodes
+//add nodes to list
+//case 1- all Fs are different
+//case 2- two Fs are same different H values last elment lowest H
+//case 3- two Fs are same , different H values second to last element lowest H
+//case 4- two Fs are same equal H values
+//case 5- 3 Fs are the same all different H
+
+  OpenList list;
+  vector<Node> Open_list;
+  vector<Node>::size_type i;
+  vector<Node>& O_list = Open_list;
+
+  Node node1, node2, node3, node4;
+  node1.SetId(1);
+  node1.SetF(1);
+  node1.SetH(1);
+  node2.SetId(2);
+  node2.SetF(2);
+  node2.SetH(2);
+  node3.SetId(3);
+  node3.SetF(2);
+  node3.SetH(2);
+  node4.SetId(4);
+  node4.SetF(4);
+  node4.SetH(4);
+
+  list.Add(O_list, node1);
+  list.Add(O_list, node2);
+  list.Add(O_list, node3);
+  list.Add(O_list, node4);
+
+  i = 2;
+  EXPECT_EQ(i, list.IsLowestF(Open_list));
+
+}
+ */
+TEST(OpenList,IsLoswestF_Case5) {
+//create a list
+//create multiple nodes
+//add nodes to list
+//case 1- all Fs are different
+//case 2- two Fs are same different H values last elment lowest H
+//case 3- two Fs are same , different H values second to last element lowest H
+//case 4- two Fs are same equal H values
+//case 5- 3 Fs are the same all different H
+
+  OpenList list;
+  vector<Node> Open_list;
+  vector<Node>::size_type i;
+  vector<Node>& O_list = Open_list;
+
+  Node node1, node2, node3, node4;
+  node1.SetId(1);
+  node1.SetF(1);
+  node1.SetH(1);
+  node2.SetId(2);
+  node2.SetF(2);
+  node2.SetH(2);
+  node3.SetId(3);
+  node3.SetF(2);
+  node3.SetH(3);
+  node4.SetId(4);
+  node4.SetF(2);
+  node4.SetH(4);
+
+  list.Add(O_list, node1);
+  list.Add(O_list, node2);
+  list.Add(O_list, node3);
+  list.Add(O_list, node4);
+
+  i = 1;
+  EXPECT_EQ(i, list.IsLowestF(Open_list));
+
+}
+
+TEST(ClosedList,CheckNotInList) {
+// create a list 
+// create a node
+// add node to list
+// check for wrong node , should return true
+// check for node in list , should return false 
+  ClosedList list;
+  vector<Node> Open_list;
+  vector<Node>& O_list = Open_list;
+
+  Node node1, node2, node3, node4;
+  node1.SetId(1);
+  node2.SetId(2);
+  node3.SetId(3);
+
+  list.Add(O_list, node1);
+  list.Add(O_list, node2);
+  list.Add(O_list, node3);
+
+  int id = 1;
+  int & idref = id;
+
+  EXPECT_FALSE(list.NotInList(O_list, idref));
+  id = 2;
+  EXPECT_FALSE(list.NotInList(O_list, idref));
+  id = 3;
+  EXPECT_FALSE(list.NotInList(O_list, idref));
+  id = 4;
+  EXPECT_TRUE(list.NotInList(O_list, idref));
 }
 
