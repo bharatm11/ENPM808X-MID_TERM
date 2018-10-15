@@ -35,7 +35,7 @@ public:
    * @details <details>
    */
   Node();
-  
+
   /**
   * @brief <brief>
   * @param [in] <name> <parameter_description>
@@ -118,4 +118,3 @@ public:
 
 };
 #endif
-

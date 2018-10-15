@@ -107,4 +107,3 @@ Location Node::GetLocation() {
 void Node::SetLocation(Location node_location) {
   Node::location_ = node_location;
 }
-
