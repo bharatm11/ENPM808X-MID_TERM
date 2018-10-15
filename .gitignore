@@ -9,3 +9,15 @@ build/
 
 # Python
 *.pyc
+
+#Cmake
+CMakeFiles/
+test/CMakeFiles/
+test/Makefile
+test/cmake_install.cmake
+test/cpp-test
+
+vendor/
+
+.cproject
+.project

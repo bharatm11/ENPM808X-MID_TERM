@@ -27,6 +27,15 @@ private:
   int parent_;
 
 public:
+
+  /**
+   * @brief <brief>
+   * @param [in] <name> <parameter_description>
+   * @return <return_description>
+   * @details <details>
+   */
+  Node();
+  
   /**
   * @brief <brief>
   * @param [in] <name> <parameter_description>
