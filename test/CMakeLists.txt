@@ -4,8 +4,12 @@ add_executable(
     cpp-test
     main.cpp
     test.cpp
-    ../app/node.cpp
+    ../app/Node.cpp
     ../app/Lists.cpp
+    ../app/OpenList.cpp
+    ../app/ClosedList.cpp
+    ../app/Map.cpp
+						
 )
 
 target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include 

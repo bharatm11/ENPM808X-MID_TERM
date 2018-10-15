@@ -9,7 +9,7 @@
 #include <iostream>
 #include <vector>
 #include "Map.hpp"
-#include "node.hpp"
+#include "Node.hpp"
 
 /**
 * @brief <brief>

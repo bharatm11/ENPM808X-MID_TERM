@@ -24,7 +24,8 @@ private:
   int g_ = 0;
   int h_ = 0;
   Location location_;
-  int parent_;
+  int parent_ = 0;
+  int id_ = 0;
 
 public:
 
@@ -35,7 +36,7 @@ public:
    * @details <details>
    */
   Node();
-
+  
   /**
   * @brief <brief>
   * @param [in] <name> <parameter_description>
@@ -76,6 +77,22 @@ public:
   */
   void SetH(int h);
 
+  /**
+   * @brief <brief>
+   * @param [in] <name> <parameter_description>
+   * @return <return_description>
+   * @details <details>
+   */
+  void SetId(int id);
+
+  /**
+   * @brief <brief>
+   * @param [in] <name> <parameter_description>
+   * @return <return_description>
+   * @details <details>
+   */
+  int GetId();
+  
   /**
   * @brief <brief>
   * @param [in] <name> <parameter_description>
@@ -118,3 +135,4 @@ public:
 
 };
 #endif
+

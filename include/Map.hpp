@@ -12,7 +12,7 @@
 
 #include <iostream>
 #include <vector>
-#include "node.hpp"
+#include "Node.hpp"
 
 class Map {
 private:

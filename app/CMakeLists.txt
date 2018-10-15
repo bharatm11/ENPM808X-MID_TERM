@@ -1,4 +1,4 @@
-add_executable(shell-app main.cpp node.cpp Lists.cpp Map.cpp)
+add_executable(shell-app main.cpp Node.cpp Lists.cpp OpenList.cpp ClosedList.cpp Map.cpp)
 include_directories(
     ${CMAKE_SOURCE_DIR}/include
 )

@@ -11,7 +11,7 @@
 #ifndef INCLUDE_LISTS_HPP_
 #define INCLUDE_LISTS_HPP_
 
-#include <node.hpp>
+#include <Node.hpp>
 #include <vector>
 using std::vector;
 class Lists {

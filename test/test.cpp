@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
-#include <node.hpp>
 #include <Lists.hpp>
+#include <Node.hpp>
+#include <OpenList.hpp>
 
 /*TEST(TestCaseName, TestName) {
  ... test body ...
