@@ -8,11 +8,12 @@
 */
 
 
-#ifndef INCLUDE_CLOSEDLIST_HPP_
-#define INCLUDE_CLOSEDLIST_HPP_
+#ifndef ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_CLOSEDLIST_HPP_
+#define ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_CLOSEDLIST_HPP_
 
+#include <vector>
 #include "lib.hpp"
-#include <Lists.hpp>
+#include "Lists.hpp"
 
 /**
 * @brief       Class for ClosedList. This is a child class of class Lists
@@ -34,4 +35,4 @@ class ClosedList : public Lists {
   */
   bool NotInList(const std::vector<Node>& list, const int& id);
 };
-#endif  //  INCLUDE_CLOSEDLIST_HPP_
+#endif  //  ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_CLOSEDLIST_HPP_

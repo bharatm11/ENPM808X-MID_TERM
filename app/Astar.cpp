@@ -18,13 +18,15 @@
 * @param [in] goal_pt , it is the terminal point the algorithm is searching for.
 */
 Astar::Astar(Node start_pt, Node goal_pt) {
-  this->current_node_.SetId(start_pt.GetId());  // initialize current node to start point .
+  // initialize current node to start point .
+  this->current_node_.SetId(start_pt.GetId());
   this->current_node_.SetParent(start_pt.GetParent());
   this->current_node_.SetLocation(start_pt.GetLocation());
   this->current_node_.SetF(0);
   this->current_node_.SetG(0);
   this->current_node_.SetH(0);
-  this->open_list_manager.Add(this->closed_list_ref_, current_node_);  //add current node to closed list
+  //  add current node to closed list
+  this->open_list_manager.Add(this->closed_list_ref_, current_node_);
 }
 
 /**
@@ -46,14 +48,13 @@ int Astar::CalculateH(Location current_loc, Location goal_pt) {
 * @details vertical or horizontal move cost=10 , diagonal move cost=14
 */
 int Astar::GetMoveCost(Node current_node, Node next_node) {
-
   int CM = 0;
   if (next_node.GetLocation().x != current_node.GetLocation().x
   && next_node.GetLocation().y != current_node.GetLocation().y) {
-    CM = 14;  //cost to move diagonally
-  } else
-  CM = 10;
-
+    CM = 14;  // cost to move diagonally
+  } else {
+    CM = 10;
+  }
   return CM;
 }
 
@@ -126,12 +127,12 @@ std::vector<Node> Astar::FindNeighbors(Map map) {
   std::vector<Node> new_neighbors;
   Node new_node;
   Location upper_corner;
-  //set  search start position to upper corner of neighbor square.
-  //current_node_ is at the center of the 9 node square.
+  // set  search start position to upper corner of neighbor square.
+  // current_node_ is at the center of the 9 node square.
   upper_corner.x = current_node_.GetLocation().x - 1;
   upper_corner.y = current_node_.GetLocation().y - 1;
 
-  //add checks in case current node is on the corner or edge of map.
+  // add checks in case current node is on the corner or edge of map.
 
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
@@ -141,20 +142,20 @@ std::vector<Node> Astar::FindNeighbors(Map map) {
       new_node.SetParent(current_node_.GetParent());
 
       if (map.IsOccupied(upper_corner)) {
-        //if location is not occupied check if node has been visited
+        // if location is not occupied check if node has been visited
 
         if (id_book_[upper_corner.x][upper_corner.y] != -1) {
-          //node has been visited, read ID from ID_book
+          // node has been visited, read ID from ID_book
 
-          //check if it's already in open list
-          //if in the open list recalculate FGH
-          //if in the closed list ignore
+          // check if it's already in open list
+          // if in the open list recalculate FGH
+          // if in the closed list ignore
 
         } else {
-          //its a new node, create ID for it
-          //set current node as its parent
-          //set location
-          //calculate its H,G,F
+          // its a new node, create ID for it
+          // set current node as its parent
+          // set location
+          // calculate its H,G,F
           id_counter_ += 1;
           new_node.SetLocation(upper_corner);
           new_node.SetId(id_counter_);
@@ -163,7 +164,7 @@ std::vector<Node> Astar::FindNeighbors(Map map) {
           new_node.SetH(CalculateH(new_node.GetLocation(), goal_pt_));
           new_node.SetF(CalculateF(new_node.GetH(), new_node.GetG()));
 
-          //add to open list
+          // add to open list
         }
       }
     }

@@ -15,9 +15,8 @@
 * @param [in] map is the map of the robot's world as a 2d vector
 * @return returns the map of the world as a 2d vector
 */
-std::vector<std::vector<int>> Map::ReadMap(std::vector<std::vector<int>> map){
-  Map::map_=map;
-
+std::vector<std::vector<int>> Map::ReadMap(std::vector<std::vector<int>> map) {
+  Map::map_ = map;
   return Map::map_;
 }
 
@@ -27,9 +26,10 @@ std::vector<std::vector<int>> Map::ReadMap(std::vector<std::vector<int>> map){
 * @param [in] location is the location of the node that needs to be updated
 * @return returns the updated map of the world as a 2d vector
 */
-std::vector<std::vector<int>> Map::UpdateMap(Location location, std::vector<std::vector<int>> map){
-  map[location.x][location.y]=2;
-  Map::map_=map;
+std::vector<std::vector<int>> Map::UpdateMap(Location location,
+                                            std::vector<std::vector<int>> map) {
+  map[location.x][location.y] = 2;
+  Map::map_ = map;
   return Map::map_;
 }
 
@@ -41,8 +41,7 @@ std::vector<std::vector<int>> Map::UpdateMap(Location location, std::vector<std:
 bool Map::IsOccupied(Location location) {
   if (this->map_[location.x][location.y] == 0) {
     return true;
-  }
-  else{
+  } else {
     return false;
   }
 }

@@ -7,11 +7,12 @@
 * for the A* path planning algorithm
 */
 
-#ifndef INCLUDE_OPENLIST_HPP_
-#define INCLUDE_OPENLIST_HPP_
+#ifndef ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_OPENLIST_HPP_
+#define ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_OPENLIST_HPP_
 
 
 #include <iostream>
+#include <vector>
 #include "lib.hpp"
 #include "Lists.hpp"
 
@@ -42,4 +43,4 @@ class OpenList : public Lists {
   */
   std::vector<Node>::size_type IsLowestF(std::vector<Node>& list);
 };
-#endif  //  INCLUDE_OPENLIST_HPP_
+#endif  //  ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_OPENLIST_HPP_

@@ -8,13 +8,13 @@
 * for the A* path planning algorithm
 */
 
-#ifndef INCLUDE_MAP_HPP_
-#define INCLUDE_MAP_HPP_
+#ifndef ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_MAP_HPP_
+#define ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_MAP_HPP_
 
 #include <iostream>
 #include <vector>
-#include "Node.hpp"
 #include <fstream>
+#include "Node.hpp"
 
 
 /**
@@ -22,10 +22,9 @@
 */
 class Map {
  private:
-  std::vector<std::vector<int>> map_ ;
+  std::vector<std::vector<int>> map_;
 
  public:
-
   /**
   * @brief Reads the original map from main file
   * @param [in] map is the map of the robot's world as a 2d vector
@@ -33,14 +32,14 @@ class Map {
   */
   std::vector<std::vector<int>> ReadMap(std::vector<std::vector<int>> map);
 
-
   /**
   * @brief Updates the map to keep track of visited nodes
   * @param [in] map is the current map of the robot's world as a 2d vector
   * @param [in] location is the location of the node that needs to be updated
   * @return returns the updated map of the world as a 2d vector
   */
-  std::vector<std::vector<int>> UpdateMap(Location location, std::vector<std::vector<int>> map);
+  std::vector<std::vector<int>> UpdateMap(Location location,
+                                          std::vector<std::vector<int>> map);
 
   /**
   * @brief Draws the figure of the map
@@ -55,4 +54,4 @@ class Map {
   */
   bool IsOccupied(Location location);
 };
-#endif
+#endif  //  ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_MAP_HPP_

@@ -8,8 +8,8 @@
 * for the A* path planning algorithm
 */
 
-#ifndef INCLUDE_NODE_HPP_
-#define INCLUDE_NODE_HPP_
+#ifndef ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_NODE_HPP_
+#define ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_NODE_HPP_
 
 #include<iostream>
 struct Location {
@@ -107,4 +107,4 @@ class Node {
   */
   void SetLocation(Location node_location);
 };
-#endif  //  INCLUDE_NODE_HPP_
+#endif  //  ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_NODE_HPP_

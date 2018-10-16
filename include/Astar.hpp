@@ -7,13 +7,14 @@
 * This class cpp file defines data members and methods applicable for class Astar
 * for the A* path planning algorithm
 */
-#ifndef INCLUDE_ASTAR_HPP_
-#define INCLUDE_ASTAR_HPP_
+#ifndef ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_ASTAR_HPP_
+#define ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_ASTAR_HPP_
 
+#include <vector>
 #include "lib.hpp"
 
-class Astar {
 
+class Astar {
  private:
   Location start_pt_;
   Location goal_pt_;
@@ -27,8 +28,8 @@ class Astar {
   std::vector<Node>& closed_list_ref_ = closed_list_;
   int id_counter_ = 0;
   std::vector<std::vector<int>> id_book_;
- public:
 
+ public:
 /**
  * @brief constructor for Astar, initializes the current_node_
  *  to the values of the starting search point and adds the current node to the closed list.
@@ -125,4 +126,4 @@ class Astar {
 };
 
 
-#endif /* INCLUDE_ASTAR_HPP_ */
+#endif /* ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_ASTAR_HPP_ */
