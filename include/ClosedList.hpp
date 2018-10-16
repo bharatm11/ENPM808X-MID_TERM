@@ -1,27 +1,24 @@
 /**
- * @file Node.hpp
- * @author Royneal Rayess, Bharat Mathur,
+ * @file ClosedList.hpp
+ * @author Royneal Rayess,
  * @date 14 Oct 2018
- * @copyright 2018 Royneal Rayess, Bharat Mathur
- * @brief This file defines the methods for class "OpenList"
- * This class OpenList contains data members and methods applicable
+ * @copyright 2018 Royneal Rayess,
+ * @brief This file defines the methods for class "ClosedList"
+ * This class ClosedList contains data members and methods applicable
  * for the A* path planning algorithm
  */
 
 #ifndef INCLUDE_CLOSEDLIST_HPP_
 #define INCLUDE_CLOSEDLIST_HPP_
 
-#include <vector>
-#include <Node.hpp>
+#include "lib.hpp"
 #include <Lists.hpp>
-
-using std::vector;
 
 class ClosedList : public Lists {
  private:
-  vector<Node> closed_list_;
+  std::vector<Node> closed_list_;
  public:
   ClosedList();
-  bool NotInList(const vector<Node>& list, const int& id);
+  bool NotInList(const std::vector<Node>& list, const int& id);
 };
 #endif

@@ -7,9 +7,7 @@
 */
 
 #include <iostream>
-#include <vector>
-#include "Map.hpp"
-#include "Node.hpp"
+#include "lib.hpp"
 
 /**
 * @brief <brief>

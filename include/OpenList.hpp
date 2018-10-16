@@ -1,5 +1,5 @@
 /**
- * @file Node.hpp
+ * @file OpenList.hpp
  * @author Royneal Rayess, Bharat Mathur,
  * @date 14 Oct 2018
  * @copyright 2018 Royneal Rayess, Bharat Mathur
@@ -10,20 +10,18 @@
 
 #ifndef INCLUDE_OPENLIST_HPP_
 #define INCLUDE_OPENLIST_HPP_
+#include <iostream>
+#include "lib.hpp"
+#include "Lists.hpp"
 
-#include <vector>
-#include <Node.hpp>
-#include <Lists.hpp>
-
-using std::vector;
 
 class OpenList : public Lists {
  private:
-  vector<Node> open_list_;
+  std::vector<Node> open_list_;
  public:
   OpenList();
-  bool InList(const vector<Node>& list, const int& id);
-  vector<Node>::size_type IsLowestF(vector<Node>& list);
+  bool InList(const std::vector<Node>& list, const int& id);
+  std::vector<Node>::size_type IsLowestF(std::vector<Node>& list);
 
 };
 #endif

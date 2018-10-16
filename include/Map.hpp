@@ -10,9 +10,7 @@
 #ifndef INCLUDE_MAP_HPP_
 #define INCLUDE_MAP_HPP_
 
-#include <iostream>
-#include <vector>
-#include "Node.hpp"
+#include "lib.hpp"
 
 class Map {
 private:

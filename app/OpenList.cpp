@@ -1,16 +1,14 @@
 /**
- * @file Lists.hpp
- * @author  Royneal Rayess, Bharat Mathur
+ * @file OpenList.cpp
+ * @author  Royneal Rayess,
  * @date 14 Oct 2018
- * @copyright 2018  Royneal Rayess, Bharat Mathur
- * @brief This file defines the methods for class "Lists"
+ * @copyright 2018  Royneal Rayess,
+ * @brief This file defines the methods for class "OpenList"
  * This class OpenList contains data members and methods applicable
  * for the A* path planning algorithm
  */
 #include <iostream>
-#include <Node.hpp>
-#include <OpenList.hpp>
-#include <algorithm>
+#include "lib.hpp"
 /**
  * @brief <brief>
  * @param [in] <name> <parameter_description>
@@ -29,8 +27,8 @@ OpenList::OpenList() {
  *  @return   The first iterator @c i in the range @p [__first,__last)
  *  such that @c *i == @p __val, or @p __last if no such iterator exists.
  */
-bool OpenList::InList(const vector<Node>& list, const int& id) {
-  vector<Node>::size_type i = 0;
+bool OpenList::InList(const std::vector<Node>& list, const int& id) {
+  std::vector<Node>::size_type i = 0;
   Node node_to_check;
   bool flag = false;
 
@@ -52,11 +50,19 @@ bool OpenList::InList(const vector<Node>& list, const int& id) {
  * @return <return_description>
  * @details <details>
  */
-vector<Node>::size_type OpenList::IsLowestF(vector<Node>& list) {
-  vector<Node>::size_type i = list.size() - 1;
-  vector<Node>::size_type lowest_f = list.size() - 1;
+std::vector<Node>::size_type OpenList::IsLowestF(std::vector<Node>& list) {
+  std::vector<Node>::size_type i = list.size() - 1;
+  std::vector<Node>::size_type lowest_f = list.size() - 1;
 
   this->SortList(list);  //sort according to F value in decending order
+
+  /* TODO! Clean
+  std::cout << "size: " << list.size() << std::endl;
+  for (i = 0; i < list.size(); i++) {
+    std::cout << "i: " << i << std::endl;
+    std::cout << list.at(i).GetId() << std::endl;
+  }
+   */
 
   while (i != 0) {
     //after sorting,scan bottom up for nodes with identical F values

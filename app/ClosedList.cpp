@@ -1,16 +1,14 @@
 /**
- * @file Lists.hpp
- * @author  Royneal Rayess, Bharat Mathur
+ * @file ClosedList.cpp
+ * @author  Royneal Rayess,
  * @date 14 Oct 2018
- * @copyright 2018  Royneal Rayess, Bharat Mathur
- * @brief This file defines the methods for class "Lists"
- * This class OpenList contains data members and methods applicable
+ * @copyright 2018  Royneal Rayess,
+ * @brief This file defines the methods for class "ClosedLists"
+ * This class ClosedList contains data members and methods applicable
  * for the A* path planning algorithm
  */
 #include <iostream>
-#include <Node.hpp>
-#include <ClosedList.hpp>
-#include <algorithm>
+#include "lib.hpp"
 
 
 /**
@@ -31,8 +29,8 @@ ClosedList::ClosedList() {
  *  @return   The first iterator @c i in the range @p [__first,__last)
  *  such that @c *i == @p __val, or @p __last if no such iterator exists.
  */
-bool ClosedList::NotInList(const vector<Node>& list, const int& id) {
-  vector<Node>::size_type i = 0;
+bool ClosedList::NotInList(const std::vector<Node>& list, const int& id) {
+  std::vector<Node>::size_type i = 0;
   Node node_to_check;
   bool flag = true;
 

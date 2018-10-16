@@ -1,19 +1,15 @@
-/*
- * Lists.cpp
- *
- *  Created on: Oct 13, 2018
- *      Author: royneal
+/**
+ * @file Lists.cpp
+ * @author  Royneal Rayess,
+ * @date 14 Oct 2018
+ * @copyright 2018  Royneal Rayess,
+ * @brief This file defines the methods for class "Lists"
+ * This class List is a base class from which OpenList and ClosedList inherit methods
  */
 
-#include <Lists.hpp>
-#include <Node.hpp>
-#include <vector>
-#include <algorithm>
+#include "lib.hpp"
 
-using std::vector;
-using std::sort;
-
-void Lists::Add(vector<Node>& list, Node node) {
+void Lists::Add(std::vector<Node>& list, Node node) {
   list.push_back(node);
 }
 
@@ -23,7 +19,7 @@ void Lists::Add(vector<Node>& list, Node node) {
  * @return <return_description>
  * @details <details>
  */
-void Lists::Remove(vector<Node>& list, vector<Node>::iterator iter) {
+void Lists::Remove(std::vector<Node>& list, std::vector<Node>::iterator iter) {
   list.erase(iter);
 }
 
@@ -34,7 +30,7 @@ void Lists::Remove(vector<Node>& list, vector<Node>::iterator iter) {
  * @details <details>
  */
 bool Lists::CompareNode(Node &node1, Node &node2) {
-  return node1.GetF() < node2.GetF();
+  return node1.GetF() > node2.GetF();
 }
 /**
  * @brief <brief>
@@ -42,7 +38,7 @@ bool Lists::CompareNode(Node &node1, Node &node2) {
  * @return <return_description>
  * @details <details>
  */
-void Lists::SortList(vector<Node>& list) {
-  sort(list.begin(), list.end(), CompareNode);
+void Lists::SortList(std::vector<Node>& list) {
+  std::sort(list.begin(), list.end(), CompareNode);
 
 }

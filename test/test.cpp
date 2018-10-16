@@ -1,13 +1,11 @@
 #include <gtest/gtest.h>
-#include <Lists.hpp>
-#include <Node.hpp>
-#include <OpenList.hpp>
-#include <ClosedList.hpp>
+#include "lib.hpp"
 
 /*TEST(TestCaseName, TestName) {
  ... test body ...
  }*/
 
+using std::vector;
 
  TEST(NodeTest, GetG) {
   Node my_node;
@@ -119,25 +117,25 @@ TEST(ListsTest, RemoveNodes) {
 
 TEST(ListsTest, SortNodes) {
   Lists my_list;
-  Node my_node, my_node2, my_node3;
+  Node my_node1, my_node2, my_node3;
 
-  my_node.SetF(3);
+  my_node1.SetF(3);
   my_node2.SetF(2);
   my_node3.SetF(1);
 
   vector<Node> Open_list;
   vector<Node>& O_list = Open_list;
   vector<Node>::size_type i;
-  my_list.Add(O_list, my_node);
-  my_list.Add(O_list, my_node2);
   my_list.Add(O_list, my_node3);
+  my_list.Add(O_list, my_node2);
+  my_list.Add(O_list, my_node1);
 
   i = 0;
-  EXPECT_EQ(3, Open_list[i].GetF());
+  EXPECT_EQ(1, Open_list[i].GetF());
 
   i = 2;
   my_list.SortList(O_list);
-  EXPECT_EQ(3, Open_list[i].GetF());
+  EXPECT_EQ(1, Open_list[i].GetF());
 
 }
 
@@ -176,15 +174,15 @@ TEST(OpenList,CheckInList) {
 
 }
 
-/*
-TEST(OpenList,IsLoswestF_Case1) {
+TEST(OpenList,IsLoswestF_Case0) {
 //create a list
 //create multiple nodes
 //add nodes to list
-//case 1- all Fs are different
+//case 0- all Fs are different, elements are sorted, Test sorting will not change
+//case 1- all Fs are different, Add lowest F at top, Test sorting will sort properly
 //case 2- two Fs are same different H values last elment lowest H
 //case 3- two Fs are same , different H values second to last element lowest H
-//case 4- two Fs are same equal H values 
+//case 4- two Fs are same equal H values
 //case 5- 3 Fs are the same all different H
 
   OpenList list;
@@ -211,11 +209,49 @@ TEST(OpenList,IsLoswestF_Case1) {
   list.Add(O_list, node2);
   list.Add(O_list, node1);
 
-  i = 0;
+  i = 3;  //after sorting node1 will be at the bottom
   EXPECT_EQ(i, list.IsLowestF(Open_list));
 
 }
- */
+TEST(OpenList,IsLoswestF_Case1) {
+//create a list
+//create multiple nodes
+//add nodes to list
+//case 1- all Fs are different, Add lowest F at top, Test sorting
+//case 2- two Fs are same different H values last elment lowest H
+//case 3- two Fs are same , different H values second to last element lowest H
+//case 4- two Fs are same equal H values 
+//case 5- 3 Fs are the same all different H
+
+  OpenList list;
+  vector<Node> Open_list;
+  vector<Node>::size_type i;
+  vector<Node>& O_list = Open_list;
+
+  Node node1, node2, node3, node4;
+  node1.SetId(1);
+  node1.SetF(1);
+  node1.SetH(1);
+  node2.SetId(2);
+  node2.SetF(2);
+  node2.SetH(2);
+  node3.SetId(3);
+  node3.SetF(3);
+  node3.SetH(3);
+  node4.SetId(4);
+  node4.SetF(4);
+  node4.SetH(4);
+
+  list.Add(O_list, node1);
+  list.Add(O_list, node2);
+  list.Add(O_list, node3);
+  list.Add(O_list, node4);
+
+  i = 3;  //after sorting node1 will be at the bottom
+  EXPECT_EQ(i, list.IsLowestF(Open_list));
+
+}
+
 TEST(OpenList,IsLoswestF_Case2) {
 //create a list
 //create multiple nodes
@@ -236,7 +272,7 @@ TEST(OpenList,IsLoswestF_Case2) {
   node1.SetF(1);
   node1.SetH(4);
   node2.SetId(2);
-  node2.SetF(2);
+  node2.SetF(1);
   node2.SetH(2);
   node3.SetId(3);
   node3.SetF(4);
@@ -289,11 +325,11 @@ TEST(OpenList,IsLoswestF_Case3) {
   list.Add(O_list, node3);
   list.Add(O_list, node4);
 
-  i = 2;
+  i = 3;
   EXPECT_EQ(i, list.IsLowestF(Open_list));
 
 }
-/*
+
 TEST(OpenList,IsLoswestF_Case4) {
 //create a list
 //create multiple nodes
@@ -328,11 +364,13 @@ TEST(OpenList,IsLoswestF_Case4) {
   list.Add(O_list, node3);
   list.Add(O_list, node4);
 
-  i = 2;
+  i = 3;  //after sorting lowest 2 Fs will be at the bottom,
+          //since the comparison function uses less than, the last
+          // element in the vector will always be selected
   EXPECT_EQ(i, list.IsLowestF(Open_list));
 
 }
- */
+
 TEST(OpenList,IsLoswestF_Case5) {
 //create a list
 //create multiple nodes
@@ -353,10 +391,10 @@ TEST(OpenList,IsLoswestF_Case5) {
   node1.SetF(1);
   node1.SetH(1);
   node2.SetId(2);
-  node2.SetF(2);
+  node2.SetF(1);
   node2.SetH(2);
   node3.SetId(3);
-  node3.SetF(2);
+  node3.SetF(1);
   node3.SetH(3);
   node4.SetId(4);
   node4.SetF(2);
@@ -402,4 +440,5 @@ TEST(ClosedList,CheckNotInList) {
   id = 4;
   EXPECT_TRUE(list.NotInList(O_list, idref));
 }
+
 
