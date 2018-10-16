@@ -2,12 +2,12 @@
 #include "lib.hpp"
 
 /*TEST(TestCaseName, TestName) {
- ... test body ...
- }*/
+... test body ...
+}*/
 
 using std::vector;
 
- TEST(NodeTest, GetG) {
+TEST(NodeTest, GetG) {
   Node my_node;
   ASSERT_EQ(0, my_node.GetG())<<"Checking GetG()";
 }
@@ -26,9 +26,9 @@ TEST(NodeTest, GetParent) {
   Node my_node;
   ASSERT_EQ(0, my_node.GetParent())<<"Checking GetParent";
 }
- 
 
- TEST(NodeTest, SetParent) {
+
+TEST(NodeTest, SetParent) {
   Node my_node;
   Location my_location;
 
@@ -68,7 +68,7 @@ TEST(NodeTest, SetG) {
   EXPECT_EQ(0, my_node.GetG());
   my_node.SetG(10);
   EXPECT_EQ(10, my_node.GetG());
- }
+}
 
 TEST(NodeTest, SetH) {
   Node my_node;
@@ -140,7 +140,7 @@ TEST(ListsTest, SortNodes) {
 }
 
 TEST(OpenList,CheckInList) {
-  // create a list 
+  // create a list
   // create a node
   // add node to list
   // check for right node should return true
@@ -175,15 +175,15 @@ TEST(OpenList,CheckInList) {
 }
 
 TEST(OpenList,IsLoswestF_Case0) {
-//create a list
-//create multiple nodes
-//add nodes to list
-//case 0- all Fs are different, elements are sorted, Test sorting will not change
-//case 1- all Fs are different, Add lowest F at top, Test sorting will sort properly
-//case 2- two Fs are same different H values last elment lowest H
-//case 3- two Fs are same , different H values second to last element lowest H
-//case 4- two Fs are same equal H values
-//case 5- 3 Fs are the same all different H
+  //create a list
+  //create multiple nodes
+  //add nodes to list
+  //case 0- all Fs are different, elements are sorted, Test sorting will not change
+  //case 1- all Fs are different, Add lowest F at top, Test sorting will sort properly
+  //case 2- two Fs are same different H values last elment lowest H
+  //case 3- two Fs are same , different H values second to last element lowest H
+  //case 4- two Fs are same equal H values
+  //case 5- 3 Fs are the same all different H
 
   OpenList list;
   vector<Node> Open_list;
@@ -214,14 +214,14 @@ TEST(OpenList,IsLoswestF_Case0) {
 
 }
 TEST(OpenList,IsLoswestF_Case1) {
-//create a list
-//create multiple nodes
-//add nodes to list
-//case 1- all Fs are different, Add lowest F at top, Test sorting
-//case 2- two Fs are same different H values last elment lowest H
-//case 3- two Fs are same , different H values second to last element lowest H
-//case 4- two Fs are same equal H values 
-//case 5- 3 Fs are the same all different H
+  //create a list
+  //create multiple nodes
+  //add nodes to list
+  //case 1- all Fs are different, Add lowest F at top, Test sorting
+  //case 2- two Fs are same different H values last elment lowest H
+  //case 3- two Fs are same , different H values second to last element lowest H
+  //case 4- two Fs are same equal H values
+  //case 5- 3 Fs are the same all different H
 
   OpenList list;
   vector<Node> Open_list;
@@ -253,14 +253,14 @@ TEST(OpenList,IsLoswestF_Case1) {
 }
 
 TEST(OpenList,IsLoswestF_Case2) {
-//create a list
-//create multiple nodes
-//add nodes to list
-//case 1- all Fs are different
-//case 2- two Fs are same different H values last elment lowest H
-//case 3- two Fs are same , different H values second to last element lowest H
-//case 4- two Fs are same equal H values
-//case 5- 3 Fs are the same all different H
+  //create a list
+  //create multiple nodes
+  //add nodes to list
+  //case 1- all Fs are different
+  //case 2- two Fs are same different H values last elment lowest H
+  //case 3- two Fs are same , different H values second to last element lowest H
+  //case 4- two Fs are same equal H values
+  //case 5- 3 Fs are the same all different H
 
   OpenList list;
   vector<Node> Open_list;
@@ -292,14 +292,14 @@ TEST(OpenList,IsLoswestF_Case2) {
 }
 
 TEST(OpenList,IsLoswestF_Case3) {
-//create a list
-//create multiple nodes
-//add nodes to list
-//case 1- all Fs are different
-//case 2- two Fs are same different H values last elment lowest H
-//case 3- two Fs are same , different H values second to last element lowest H
-//case 4- two Fs are same equal H values
-//case 5- 3 Fs are the same all different H
+  //create a list
+  //create multiple nodes
+  //add nodes to list
+  //case 1- all Fs are different
+  //case 2- two Fs are same different H values last elment lowest H
+  //case 3- two Fs are same , different H values second to last element lowest H
+  //case 4- two Fs are same equal H values
+  //case 5- 3 Fs are the same all different H
 
   OpenList list;
   vector<Node> Open_list;
@@ -331,14 +331,14 @@ TEST(OpenList,IsLoswestF_Case3) {
 }
 
 TEST(OpenList,IsLoswestF_Case4) {
-//create a list
-//create multiple nodes
-//add nodes to list
-//case 1- all Fs are different
-//case 2- two Fs are same different H values last elment lowest H
-//case 3- two Fs are same , different H values second to last element lowest H
-//case 4- two Fs are same equal H values
-//case 5- 3 Fs are the same all different H
+  //create a list
+  //create multiple nodes
+  //add nodes to list
+  //case 1- all Fs are different
+  //case 2- two Fs are same different H values last elment lowest H
+  //case 3- two Fs are same , different H values second to last element lowest H
+  //case 4- two Fs are same equal H values
+  //case 5- 3 Fs are the same all different H
 
   OpenList list;
   vector<Node> Open_list;
@@ -365,21 +365,21 @@ TEST(OpenList,IsLoswestF_Case4) {
   list.Add(O_list, node4);
 
   i = 3;  //after sorting lowest 2 Fs will be at the bottom,
-          //since the comparison function uses less than, the last
-          // element in the vector will always be selected
+  //since the comparison function uses less than, the last
+  // element in the vector will always be selected
   EXPECT_EQ(i, list.IsLowestF(Open_list));
 
 }
 
 TEST(OpenList,IsLoswestF_Case5) {
-//create a list
-//create multiple nodes
-//add nodes to list
-//case 1- all Fs are different
-//case 2- two Fs are same different H values last elment lowest H
-//case 3- two Fs are same , different H values second to last element lowest H
-//case 4- two Fs are same equal H values
-//case 5- 3 Fs are the same all different H
+  //create a list
+  //create multiple nodes
+  //add nodes to list
+  //case 1- all Fs are different
+  //case 2- two Fs are same different H values last elment lowest H
+  //case 3- two Fs are same , different H values second to last element lowest H
+  //case 4- two Fs are same equal H values
+  //case 5- 3 Fs are the same all different H
 
   OpenList list;
   vector<Node> Open_list;
@@ -411,11 +411,11 @@ TEST(OpenList,IsLoswestF_Case5) {
 }
 
 TEST(ClosedList,CheckNotInList) {
-// create a list 
-// create a node
-// add node to list
-// check for wrong node , should return true
-// check for node in list , should return false 
+  // create a list
+  // create a node
+  // add node to list
+  // check for wrong node , should return true
+  // check for node in list , should return false
   ClosedList list;
   vector<Node> Open_list;
   vector<Node>& O_list = Open_list;
@@ -441,4 +441,38 @@ TEST(ClosedList,CheckNotInList) {
   EXPECT_TRUE(list.NotInList(O_list, idref));
 }
 
+TEST(Map, CheckReadMap) {
+  std::vector<std::vector<int>> a;
+  Map my_map;
+  std::vector<std::vector<int>> map{ { 1, 1, 1, 1},{1, 0, 0, 1},{1, 1, 1, 1} };
+  a=my_map.ReadMap(map);
+  int rows=0;
+  int columns=0;
+  rows=a.size();
+  columns=a[0].size();
+  EXPECT_EQ(3,rows);
+  EXPECT_EQ(4,columns);
+}
 
+TEST(Map2, CheckUpdateMap) {
+  std::vector<std::vector<int>> a;
+  Map my_map;
+  std::vector<std::vector<int>> map{ { 1, 1, 1, 1},{1, 0, 0, 1},{1, 1, 1, 1} };
+  a=my_map.ReadMap(map);
+  Location my_location;
+  my_location.x=2;
+  my_location.y=2;
+  a=my_map.UpdateMap(my_location, map);
+  EXPECT_EQ(2,a[2][2]);
+}
+
+TEST(Map2, CheckIsOccupied) {
+  std::vector<std::vector<int>> a;
+  Map my_map;
+  std::vector<std::vector<int>> map{ { 1, 1, 1, 1},{1, 0, 0, 1},{1, 1, 1, 1} };
+  a=my_map.ReadMap(map);
+  Location my_location;
+  my_location.x=1;
+  my_location.y=1;
+  EXPECT_EQ(true,my_map.IsOccupied(my_location));
+}

@@ -1,12 +1,12 @@
 /**
- * @file Astar.hpp
- * @author  Royneal Rayess,
- * @date 15 Oct 2018
- * @copyright 2018  Royneal Rayess,
- * @brief This file defines the methods for class "Astar"
- * This class OpenList contains data members and methods applicable
- * for the A* path planning algorithm
- */
+* @file Astar.hpp
+* @author Bharat Mathur, Royneal Rayess
+* @date 10 Oct 2018
+* @copyright 2018 Bharat Mathur, Royneal Rayess
+* @brief This file defines the methods for class "Astar"
+* This class cpp file defines data members and methods applicable for class Astar
+* for the A* path planning algorithm
+*/
 #ifndef INCLUDE_ASTAR_HPP_
 #define INCLUDE_ASTAR_HPP_
 

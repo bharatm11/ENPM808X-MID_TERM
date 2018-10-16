@@ -1,20 +1,20 @@
 /**
-* @file Map.cpp
-* @author Joe Bloggs
-* @date 15 Oct 2018
-* @copyright 2018 Joe Bloggs
-* @brief <brief>
+* @file Map.hpp
+* @author Bharat Mathur, Royneal Rayess
+* @date 10 Oct 2018
+* @copyright 2018 Bharat Mathur, Royneal Rayess
+* @brief This file implements the methods for class "Map"
+* This class cpp file implements data members and methods applicable for class Map
+* for the A* path planning algorithm
 */
 #include <iostream>
 #include "lib.hpp"
 
 /**
-* @brief <brief>
-* @param [in] <name> <parameter_description>
-* @return <return_description>
-* @details <details>
+* @brief Reads the original map from main file
+* @param [in] map is the map of the robot's world as a 2d vector
+* @return returns the map of the world as a 2d vector
 */
-
 std::vector<std::vector<int>> Map::ReadMap(std::vector<std::vector<int>> map){
   Map::map_=map;
 
@@ -22,24 +22,22 @@ std::vector<std::vector<int>> Map::ReadMap(std::vector<std::vector<int>> map){
 }
 
 /**
-* @brief <brief>
-* @param [in] <name> <parameter_description>
-* @return <return_description>
-* @details <details>
+* @brief Updates the map to keep track of visited nodes
+* @param [in] map is the current map of the robot's world as a 2d vector
+* @param [in] location is the location of the node that needs to be updated
+* @return returns the updated map of the world as a 2d vector
 */
-
-void Map::UpdateMap(Location location, std::vector<std::vector<int>> map){
+std::vector<std::vector<int>> Map::UpdateMap(Location location, std::vector<std::vector<int>> map){
   map[location.x][location.y]=2;
   Map::map_=map;
+  return Map::map_;
 }
 
 /**
-* @brief <brief>
-* @param [in] <name> <parameter_description>
-* @return <return_description>
-* @details <details>
+* @brief Checks if a node is occupied by an obstacle
+* @param [in] location is the location of the node that needs to be checked
+* @return returns true if node is occupied
 */
-
 bool Map::IsOccupied(Location location) {
   if (this->map_[location.x][location.y] == 0) {
     return true;
