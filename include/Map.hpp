@@ -55,7 +55,7 @@ void DrawMap(std::vector<std::vector<int>> map);
 * @details <details>
 */
 
-bool IsOccupied(Location location, std::vector<std::vector<int>> map);
+bool IsOccupied(Location location);
 
 /**
 * @brief <brief>

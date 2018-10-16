@@ -5,12 +5,9 @@
 * @copyright 2018 Joe Bloggs
 * @brief <brief>
 */
-
 #include <iostream>
-#include <vector>
-#include "Map.hpp"
-#include "Node.hpp"
-#include <fstream>
+#include "lib.hpp"
+
 /**
 * @brief <brief>
 * @param [in] <name> <parameter_description>
@@ -43,14 +40,13 @@ void Map::UpdateMap(Location location, std::vector<std::vector<int>> map){
 * @details <details>
 */
 
-bool Map::IsOccupied(Location location, std::vector<std::vector<int>> map){
-  if(map[location.x][location.y]==0){
+bool Map::IsOccupied(Location location) {
+  if (this->map_[location.x][location.y] == 0) {
     return true;
   }
   else{
     return false;
   }
-}
 
 /**
 * @brief <brief>

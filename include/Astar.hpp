@@ -25,17 +25,18 @@ class Astar {
   std::vector<Node> closed_list_;
   std::vector<Node>& open_list_ref_ = open_list_;
   std::vector<Node>& closed_list_ref_ = closed_list_;
+  int id_counter_ = 0;
+  std::vector<std::vector<int>> id_book_;
  public:
 
   Astar(Node start_pt, Node goal_pt);
   int CalculateH(Location current_loc, Location goal_pt);
   int CalculateG(Node current_node, Node next_node);
   int CalculateF(const int& H, const int& G);
-  int ReCalculateG(Node current_node, Node next_node);
-  void SetCurentNode(std::vector<Node>::size_type i);
-  void SetParentNode(Node node, std::vector<Node>::size_type i);
-  std::vector<Node> FindNeighbors(Node current_node,
-                                  std::vector<std::vector<int>> map);
+  void ReCalculateG(Node current_node, Node next_node);
+  void SetCurentNode();
+  void SetParentNode(Node child_node, Node parent_node);
+  std::vector<Node> FindNeighbors(Map map);
   int GetMoveCost(Node current_node, Node next_node);
   bool IsGoal(Node current_node);
   bool IsStart(Node current_node);
