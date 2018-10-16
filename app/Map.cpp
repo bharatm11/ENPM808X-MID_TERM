@@ -47,6 +47,7 @@ bool Map::IsOccupied(Location location) {
   else{
     return false;
   }
+}
 
 /**
 * @brief <brief>

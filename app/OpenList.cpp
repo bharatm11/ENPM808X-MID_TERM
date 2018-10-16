@@ -1,32 +1,26 @@
 /**
- * @file OpenList.cpp
- * @author  Royneal Rayess,
- * @date 14 Oct 2018
- * @copyright 2018  Royneal Rayess,
- * @brief This file defines the methods for class "OpenList"
- * This class OpenList contains data members and methods applicable
- * for the A* path planning algorithm
- */
+* @file OpenList.hpp
+* @author  Royneal Rayess,Bharat Mathur
+* @date 14 Oct 2018
+* @copyright 2018  Royneal Rayess, Bharat Mathur
+* @brief This class cpp file defines data members and methods applicable for class OpenList
+* for the A* path planning algorithm
+*/
+
 #include <iostream>
 #include "lib.hpp"
-/**
- * @brief <brief>
- * @param [in] <name> <parameter_description>
- * @return <return_descrifindption>
- * @details <details>
- */
-OpenList::OpenList() {
 
+/**
+* @brief Class constructor for OpenList object
+*/
+OpenList::OpenList() {
 }
 /**
- *  @brief Find the first occurrence of a value in a sequence.
- *  @ingroup non_mutating_algorithms
- *  @param  __first  An input iterator.
- *  @param  __last   An input iterator.
- *  @param  __val    The value to find.
- *  @return   The first iterator @c i in the range @p [__first,__last)
- *  such that @c *i == @p __val, or @p __last if no such iterator exists.
- */
+* @brief Checks if a node is present in the given list
+* @param [in] list (OpenList or ClosedList) is the list in which node is to be checked
+* @param [in] id is the ID of the node whose presence needs to be checked
+* @return true is node with node ID "id" is present in the list
+*/
 bool OpenList::InList(const std::vector<Node>& list, const int& id) {
   std::vector<Node>::size_type i = 0;
   Node node_to_check;
@@ -37,52 +31,47 @@ bool OpenList::InList(const std::vector<Node>& list, const int& id) {
     if (node_to_check.GetId() == id) {
       flag = true;
       break;
-    }
-    else
+    } else {
       i++;
+    }
   }
   return flag;
 }
 
 /**
- * @brief <brief>
- * @param [in] <name> <parameter_description>
- * @return <return_description>
- * @details <details>
- */
+* @brief Returns the node ID of the node with the lowest total cost
+* @param [in] list (OpenList or ClosedList) is the list in which node is to be checked
+* @return ID of the node with the lowest total cost
+*/
 std::vector<Node>::size_type OpenList::IsLowestF(std::vector<Node>& list) {
   std::vector<Node>::size_type i = list.size() - 1;
   std::vector<Node>::size_type lowest_f = list.size() - 1;
 
-  this->SortList(list);  //sort according to F value in decending order
+  this->SortList(list);  // sort according to F value in decending order
 
   /* TODO! Clean
   std::cout << "size: " << list.size() << std::endl;
   for (i = 0; i < list.size(); i++) {
-    std::cout << "i: " << i << std::endl;
-    std::cout << list.at(i).GetId() << std::endl;
-  }
-   */
+  std::cout << "i: " << i << std::endl;
+  std::cout << list.at(i).GetId() << std::endl;
+}
+*/
 
-  while (i != 0) {
-    //after sorting,scan bottom up for nodes with identical F values
-    if (list.at(lowest_f).GetF() == list.at(i).GetF()) {
-      // compare and save the node with lowest H
-      if (list.at(lowest_f).GetH() > list.at(i).GetH()) {
-        //update index of smallest node
-        lowest_f = i;
-
-      }
+while (i != 0) {
+  // after sorting,scan bottom up for nodes with identical F values
+  if (list.at(lowest_f).GetF() == list.at(i).GetF()) {
+    // compare and save the node with lowest H
+    if (list.at(lowest_f).GetH() > list.at(i).GetH()) {
+      // update index of smallest node
+      lowest_f = i;
     }
-    else
-      break;
-
-    i--;
+  } else {
+    break;
   }
-  //find if there are multiple nodes with same f
-  //if so find the f with lowest H and return it
-  //else return last node.
-
-  return lowest_f;
-
+  i--;
+}
+// find if there are multiple nodes with same f
+// if so find the f with lowest H and return it
+// else return last node.
+return lowest_f;
 }

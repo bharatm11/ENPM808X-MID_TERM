@@ -1,34 +1,27 @@
 /**
- * @file ClosedList.cpp
- * @author  Royneal Rayess,
- * @date 14 Oct 2018
- * @copyright 2018  Royneal Rayess,
- * @brief This file defines the methods for class "ClosedLists"
- * This class ClosedList contains data members and methods applicable
- * for the A* path planning algorithm
- */
+* @file ClosedList.cpp
+* @author  Royneal Rayess,Bharat Mathur
+* @date 14 Oct 2018
+* @copyright 2018  Royneal Rayess, Bharat Mathur
+* @brief This class cpp file implements data members and methods applicable for class ClosedList
+* for the A* path planning algorithm
+*/
 #include <iostream>
 #include "lib.hpp"
 
 
 /**
- * @brief <brief>
- * @param [in] <name> <parameter_description>
- * @return <return_descrifindption>
- * @details <details>
- */
+* @brief Class constructor for ClosedList object
+*/
 ClosedList::ClosedList() {
-
 }
+
 /**
- *  @brief Find the first occurrence of a value in a sequence.
- *  @ingroup non_mutating_algorithms
- *  @param  __first  An input iterator.
- *  @param  __last   An input iterator.
- *  @param  __val    The value to find.
- *  @return   The first iterator @c i in the range @p [__first,__last)
- *  such that @c *i == @p __val, or @p __last if no such iterator exists.
- */
+* @brief Checks if a node is present in the given list
+* @param [in] list (OpenList or ClosedList) is the list in which node is to be checked
+* @param [in] id is the ID of the node whose presence needs to be checked
+* @return true is node with node ID "id" is present in the list
+*/
 bool ClosedList::NotInList(const std::vector<Node>& list, const int& id) {
   std::vector<Node>::size_type i = 0;
   Node node_to_check;
@@ -39,9 +32,9 @@ bool ClosedList::NotInList(const std::vector<Node>& list, const int& id) {
     if (node_to_check.GetId() == id) {
       flag = false;
       break;
-    } else
+    } else {
       i++;
+    }
   }
-
   return flag;
 }
