@@ -7,8 +7,10 @@
 */
 
 #include <iostream>
-#include "lib.hpp"
-
+#include <vector>
+#include "Map.hpp"
+#include "Node.hpp"
+#include <fstream>
 /**
 * @brief <brief>
 * @param [in] <name> <parameter_description>
@@ -29,10 +31,9 @@ std::vector<std::vector<int>> Map::ReadMap(std::vector<std::vector<int>> map){
 * @details <details>
 */
 
-std::vector<std::vector<int>> Map::UpdateMap(Location location, std::vector<std::vector<int>> map){
+void Map::UpdateMap(Location location, std::vector<std::vector<int>> map){
   map[location.x][location.y]=2;
   Map::map_=map;
-  return Map::map_;
 }
 
 /**
@@ -42,13 +43,37 @@ std::vector<std::vector<int>> Map::UpdateMap(Location location, std::vector<std:
 * @details <details>
 */
 
-bool IsOccupied(Location location, std::vector<std::vector<int>> map){
+bool Map::IsOccupied(Location location, std::vector<std::vector<int>> map){
   if(map[location.x][location.y]==0){
     return true;
   }
   else{
     return false;
   }
+}
 
+/**
+* @brief <brief>
+* @param [in] <name> <parameter_description>
+* @return <return_description>
+* @details <details>
+*/
+
+/*
+void Map::DrawMap() {
+ofstream img ("picture.ppm");
+img<<"P6"<<endl;
+img<<Map::map_.size()<<" "<<Map::map_.size()<<endl;
+img<<"Map::map_[0].size()"<<endl;
+for(int i=0;i<Map::map_.size();i++){
+for(int j=0;i<Map::map_[0].size();j++){
+int r = Map_map_[i][j];
+int g =0;
+int b=0;
+img<<r<<" "<<g<<" "<< b << std::endl;
 
 }
+}
+system("open picture.ppm");
+
+}*/

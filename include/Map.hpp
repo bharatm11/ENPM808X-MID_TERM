@@ -10,7 +10,10 @@
 #ifndef INCLUDE_MAP_HPP_
 #define INCLUDE_MAP_HPP_
 
-#include "lib.hpp"
+#include <iostream>
+#include <vector>
+#include "Node.hpp"
+#include <fstream>
 
 class Map {
 private:
@@ -34,7 +37,7 @@ public:
 * @details <details>
 */
 
-std::vector<std::vector<int>> UpdateMap(Location location, std::vector<std::vector<int>> map);
+void UpdateMap(Location location, std::vector<std::vector<int>> map);
 
 /**
 * @brief <brief>
@@ -54,8 +57,14 @@ void DrawMap(std::vector<std::vector<int>> map);
 
 bool IsOccupied(Location location, std::vector<std::vector<int>> map);
 
+/**
+* @brief <brief>
+* @param [in] <name> <parameter_description>
+* @return <return_description>
+* @details <details>
+*/
 
-
+void DrawMap();
 
 };
 #endif
