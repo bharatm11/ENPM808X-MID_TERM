@@ -8,6 +8,7 @@
  * for the A* path planning algorithm
  */
 #include <iostream>
+
 #include "lib.hpp"
 
 /**
@@ -16,8 +17,14 @@
  * @return <return_description>
  * @details <details>
  */
-Astar::Astar() {
-
+Astar::Astar(Node start_pt, Node goal_pt) {
+  this->current_node_.SetId(start_pt.GetId());  // initialize current node to start point .
+  this->current_node_.SetParent(start_pt.GetParent());
+  this->current_node_.SetLocation(start_pt.GetLocation());
+  this->current_node_.SetF(0);
+  this->current_node_.SetG(0);
+  this->current_node_.SetH(0);
+  this->open_list_manager.Add(this->closed_list_ref_, current_node_);  //add current node to closed list
 }
 /**
  * @brief <brief>
@@ -26,8 +33,26 @@ Astar::Astar() {
  * @details <details>
  */
 int Astar::CalculateH(Location current_loc, Location goal_pt) {
+  return std::abs(current_loc.x - goal_pt.x)
+      + std::abs(current_loc.y - goal_pt.y);
+}
 
-  return 0;
+/**
+ * @brief <brief>
+ * @param [in] <name> <parameter_description>
+ * @return <return_description>
+ * @details <details>
+ */
+int Astar::GetMoveCost(Node current_node, Node next_node) {
+
+  int CM = 0;
+  if (next_node.GetLocation().x != current_node.GetLocation().x
+      && next_node.GetLocation().y != current_node.GetLocation().y) {
+    CM = 14;  //cost to move diagonally
+  } else
+    CM = 10;
+
+  return CM;
 }
 /**
  * @brief <brief>
@@ -36,8 +61,10 @@ int Astar::CalculateH(Location current_loc, Location goal_pt) {
  * @details <details>
  */
 int Astar::CalculateG(Node current_node, Node next_node) {
-
-  return 0;
+  int Gc = current_node.GetG();
+  int CM = this->GetMoveCost(current_node, next_node);
+  int G = Gc + CM;
+  return G;
 }
 /**
  * @brief <brief>
@@ -46,8 +73,7 @@ int Astar::CalculateG(Node current_node, Node next_node) {
  * @details <details>
  */
 int Astar::CalculateF(const int& H, const int& G) {
-
-  return 0;
+  return H + G;
 }
 /**
  * @brief <brief>
@@ -68,7 +94,7 @@ int Astar::ReCalculateG(Node current_node, Node next_node) {
 void Astar::SetCurentNode(std::vector<Node>::size_type i) {
 
 }
-void Astar::SetParentNOde(Node node, std::vector<Node>::size_type i) {
+void Astar::SetParentNode(Node node, std::vector<Node>::size_type i) {
 
 }
 /**
@@ -84,16 +110,8 @@ std::vector<Node> Astar::FindNeighbors(Node current_node,
   return node;
 
 }
-/**
- * @brief <brief>
- * @param [in] <name> <parameter_description>
- * @return <return_description>
- * @details <details>
- */
-int Astar::GetMoveCost(Node current_node, Node next_node) {
 
-  return 0;
-}
+
 /**
  * @brief <brief>
  * @param [in] <name> <parameter_description>
@@ -101,8 +119,11 @@ int Astar::GetMoveCost(Node current_node, Node next_node) {
  * @details <details>
  */
 bool Astar::IsGoal(Node current_node) {
-
-  return true;
+  if (current_node.GetLocation().x == this->goal_pt_.x
+      && current_node.GetLocation().y == this->goal_pt_.y)
+    return true;
+  else
+    return false;
 }
 /**
  * @brief <brief>
@@ -111,8 +132,11 @@ bool Astar::IsGoal(Node current_node) {
  * @details <details>
  */
 bool Astar::IsStart(Node current_node) {
-
-  return true;
+  if (current_node.GetLocation().x == this->start_pt_.x
+      && current_node.GetLocation().y == this->start_pt_.y)
+    return true;
+  else
+    return false;
 }
 /**
  * @brief <brief>

@@ -16,16 +16,24 @@ class Astar {
 
  private:
   Location start_pt_;
-  Location goat_pt_;
+  Location goal_pt_;
+  Node current_node_;
+  Node next_node_;
+  OpenList open_list_manager;
+  ClosedList closed_list_manager;
+  std::vector<Node> open_list_;
+  std::vector<Node> closed_list_;
+  std::vector<Node>& open_list_ref_ = open_list_;
+  std::vector<Node>& closed_list_ref_ = closed_list_;
  public:
 
-  Astar();
+  Astar(Node start_pt, Node goal_pt);
   int CalculateH(Location current_loc, Location goal_pt);
   int CalculateG(Node current_node, Node next_node);
   int CalculateF(const int& H, const int& G);
   int ReCalculateG(Node current_node, Node next_node);
   void SetCurentNode(std::vector<Node>::size_type i);
-  void SetParentNOde(Node node, std::vector<Node>::size_type i);
+  void SetParentNode(Node node, std::vector<Node>::size_type i);
   std::vector<Node> FindNeighbors(Node current_node,
                                   std::vector<std::vector<int>> map);
   int GetMoveCost(Node current_node, Node next_node);
