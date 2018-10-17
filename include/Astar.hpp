@@ -24,8 +24,6 @@ class Astar {
   ClosedList closed_list_manager;
   std::vector<Node> open_list_;
   std::vector<Node> closed_list_;
-  std::vector<Node>& open_list_ref_ = open_list_;
-  std::vector<Node>& closed_list_ref_ = closed_list_;
   int id_counter_ = 0;
   std::vector<std::vector<int>> id_book_;
 

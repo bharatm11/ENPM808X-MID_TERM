@@ -26,7 +26,7 @@ Astar::Astar(Node start_pt, Node goal_pt) {
   this->current_node_.SetG(0);
   this->current_node_.SetH(0);
   //  add current node to closed list
-  this->open_list_manager.Add(this->closed_list_ref_, current_node_);
+  this->open_list_manager.Add(this->closed_list_, current_node_);
 }
 
 /**
