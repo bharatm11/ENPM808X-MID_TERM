@@ -71,7 +71,6 @@ After completing installation, type:
 sudo apt install doxygen
 cd <path to repository>
 mkdir docs
-cd docs
 doxygen -g config
 ```
 Open the Doxygen congiguration file "config" and update the following parameters:
@@ -84,7 +83,6 @@ OUTPUT_DIRECTORY       = docs
 
 In terminal, type:
 ```
-cd ..
 doxygen config
 ```
 
