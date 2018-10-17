@@ -51,8 +51,19 @@ mkdir build
 cd build
 cmake ..
 make
-Run tests: ./test/cpp-test
-Run program: ./app/shell-app
+
+```
+## Run demo
+
+After the Build step, type:
+```
+./app/shell-app
+```
+## Run tests
+
+After the Build step, type:
+```
+./test/cpp-test
 ```
 
 ## doxygen documentation
