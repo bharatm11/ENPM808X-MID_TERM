@@ -1,0 +1,248 @@
+\hypertarget{classNode}{}\section{Node Class Reference}
+\label{classNode}\index{Node@{Node}}
+
+
+Class for \hyperlink{classNode}{Node}.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNode_ad7a34779cad45d997bfd6d3d8043c75f}{Node} ()
+\begin{DoxyCompactList}\small\item\em Class constructor for \hyperlink{classNode}{Node} object to default values. \end{DoxyCompactList}\item 
+void \hyperlink{classNode_a315c36c92f2c4b33d43bb1c6bb66231c}{Set\+Parent} (int index)
+\begin{DoxyCompactList}\small\item\em Sets parent of the current node to index. \end{DoxyCompactList}\item 
+int \hyperlink{classNode_a0c88f847679bdc55ef7e69f5fbc63c1f}{Get\+Parent} ()
+\begin{DoxyCompactList}\small\item\em Returns index of parent for current node. \end{DoxyCompactList}\item 
+void \hyperlink{classNode_a1b9370053e145b1a52ec4b4d1c748d58}{SetF} (int f)
+\begin{DoxyCompactList}\small\item\em Sets total cost function for the node. \end{DoxyCompactList}\item 
+void \hyperlink{classNode_a257063494fbc264f08f8e0c4e8118db2}{SetG} (int g)
+\begin{DoxyCompactList}\small\item\em Sets Cost-\/to-\/come for current node. \end{DoxyCompactList}\item 
+void \hyperlink{classNode_ad9ac82445895931622b8df57183a3603}{SetH} (int h)
+\begin{DoxyCompactList}\small\item\em Sets Cost-\/to-\/go for current node. \end{DoxyCompactList}\item 
+void \hyperlink{classNode_a515ad64c840bbb80d7958203faf55584}{Set\+Id} (int id)
+\begin{DoxyCompactList}\small\item\em This gives an index ID to the node. \end{DoxyCompactList}\item 
+int \hyperlink{classNode_ae90214a3ccf4ead8527329bbe238570c}{Get\+Id} ()
+\begin{DoxyCompactList}\small\item\em Returns the index ID of the node. \end{DoxyCompactList}\item 
+int \hyperlink{classNode_aeec24ba9086dfa447b1f6b7ad429556e}{GetF} ()
+\begin{DoxyCompactList}\small\item\em Returns the total cost of the node. \end{DoxyCompactList}\item 
+int \hyperlink{classNode_a777bb71e0b5ac4185ec90265d79588e7}{GetG} ()
+\begin{DoxyCompactList}\small\item\em Returns the cost to come for the node. \end{DoxyCompactList}\item 
+int \hyperlink{classNode_a4a8b3e5322f37c817217cdb20eb920dc}{GetH} ()
+\begin{DoxyCompactList}\small\item\em Returns the cost to go for the node. \end{DoxyCompactList}\item 
+\hyperlink{structLocation}{Location} \hyperlink{classNode_ae8a71f87f6b9042f6e4ae17dd45b2a20}{Get\+Location} ()
+\begin{DoxyCompactList}\small\item\em Returns the location of the node. \end{DoxyCompactList}\item 
+void \hyperlink{classNode_af16ff69ab235ae2f2270a5f8f2b9816a}{Set\+Location} (\hyperlink{structLocation}{Location} node\+\_\+location)
+\begin{DoxyCompactList}\small\item\em Stores the location of current node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for \hyperlink{classNode}{Node}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Node()}{Node()}}]{\setlength{\rightskip}{0pt plus 5cm}Node\+::\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classNode_ad7a34779cad45d997bfd6d3d8043c75f}{}\label{classNode_ad7a34779cad45d997bfd6d3d8043c75f}
+
+
+Class constructor for \hyperlink{classNode}{Node} object to default values. 
+
+Constructs the \hyperlink{classNode}{Node} object with default values. 
+
+\subsection{Member Function Documentation}
+\index{Node@{Node}!GetF@{GetF}}
+\index{GetF@{GetF}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Get\+F()}{GetF()}}]{\setlength{\rightskip}{0pt plus 5cm}int Node\+::\+GetF (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classNode_aeec24ba9086dfa447b1f6b7ad429556e}{}\label{classNode_aeec24ba9086dfa447b1f6b7ad429556e}
+
+
+Returns the total cost of the node. 
+
+\begin{DoxyReturn}{Returns}
+total cost int 
+\end{DoxyReturn}
+\index{Node@{Node}!GetG@{GetG}}
+\index{GetG@{GetG}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Get\+G()}{GetG()}}]{\setlength{\rightskip}{0pt plus 5cm}int Node\+::\+GetG (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classNode_a777bb71e0b5ac4185ec90265d79588e7}{}\label{classNode_a777bb71e0b5ac4185ec90265d79588e7}
+
+
+Returns the cost to come for the node. 
+
+\begin{DoxyReturn}{Returns}
+cost to come int 
+\end{DoxyReturn}
+\index{Node@{Node}!GetH@{GetH}}
+\index{GetH@{GetH}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Get\+H()}{GetH()}}]{\setlength{\rightskip}{0pt plus 5cm}int Node\+::\+GetH (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classNode_a4a8b3e5322f37c817217cdb20eb920dc}{}\label{classNode_a4a8b3e5322f37c817217cdb20eb920dc}
+
+
+Returns the cost to go for the node. 
+
+\begin{DoxyReturn}{Returns}
+cost to go int 
+\end{DoxyReturn}
+\index{Node@{Node}!Get\+Id@{Get\+Id}}
+\index{Get\+Id@{Get\+Id}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Get\+Id()}{GetId()}}]{\setlength{\rightskip}{0pt plus 5cm}int Node\+::\+Get\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classNode_ae90214a3ccf4ead8527329bbe238570c}{}\label{classNode_ae90214a3ccf4ead8527329bbe238570c}
+
+
+Returns the index ID of the node. 
+
+\begin{DoxyReturn}{Returns}
+Index ID int 
+\end{DoxyReturn}
+\index{Node@{Node}!Get\+Location@{Get\+Location}}
+\index{Get\+Location@{Get\+Location}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Get\+Location()}{GetLocation()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Location} Node\+::\+Get\+Location (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classNode_ae8a71f87f6b9042f6e4ae17dd45b2a20}{}\label{classNode_ae8a71f87f6b9042f6e4ae17dd45b2a20}
+
+
+Returns the location of the node. 
+
+\begin{DoxyReturn}{Returns}
+location \hyperlink{structLocation}{Location} 
+\end{DoxyReturn}
+\index{Node@{Node}!Get\+Parent@{Get\+Parent}}
+\index{Get\+Parent@{Get\+Parent}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Get\+Parent()}{GetParent()}}]{\setlength{\rightskip}{0pt plus 5cm}int Node\+::\+Get\+Parent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classNode_a0c88f847679bdc55ef7e69f5fbc63c1f}{}\label{classNode_a0c88f847679bdc55ef7e69f5fbc63c1f}
+
+
+Returns index of parent for current node. 
+
+\begin{DoxyReturn}{Returns}
+index of parent int 
+\end{DoxyReturn}
+\index{Node@{Node}!SetF@{SetF}}
+\index{SetF@{SetF}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Set\+F(int f)}{SetF(int f)}}]{\setlength{\rightskip}{0pt plus 5cm}void Node\+::\+SetF (
+\begin{DoxyParamCaption}
+\item[{int}]{f}
+\end{DoxyParamCaption}
+)}\hypertarget{classNode_a1b9370053e145b1a52ec4b4d1c748d58}{}\label{classNode_a1b9370053e145b1a52ec4b4d1c748d58}
+
+
+Sets total cost function for the node. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em f} & is the cost of current node int \\
+\hline
+\end{DoxyParams}
+\index{Node@{Node}!SetG@{SetG}}
+\index{SetG@{SetG}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Set\+G(int g)}{SetG(int g)}}]{\setlength{\rightskip}{0pt plus 5cm}void Node\+::\+SetG (
+\begin{DoxyParamCaption}
+\item[{int}]{g}
+\end{DoxyParamCaption}
+)}\hypertarget{classNode_a257063494fbc264f08f8e0c4e8118db2}{}\label{classNode_a257063494fbc264f08f8e0c4e8118db2}
+
+
+Sets Cost-\/to-\/come for current node. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em g} & is cost-\/to-\/come int \\
+\hline
+\end{DoxyParams}
+\index{Node@{Node}!SetH@{SetH}}
+\index{SetH@{SetH}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Set\+H(int h)}{SetH(int h)}}]{\setlength{\rightskip}{0pt plus 5cm}void Node\+::\+SetH (
+\begin{DoxyParamCaption}
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)}\hypertarget{classNode_ad9ac82445895931622b8df57183a3603}{}\label{classNode_ad9ac82445895931622b8df57183a3603}
+
+
+Sets Cost-\/to-\/go for current node. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em g} & is cost-\/to-\/go int \\
+\hline
+\end{DoxyParams}
+\index{Node@{Node}!Set\+Id@{Set\+Id}}
+\index{Set\+Id@{Set\+Id}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Set\+Id(int id)}{SetId(int id)}}]{\setlength{\rightskip}{0pt plus 5cm}void Node\+::\+Set\+Id (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{classNode_a515ad64c840bbb80d7958203faf55584}{}\label{classNode_a515ad64c840bbb80d7958203faf55584}
+
+
+This gives an index ID to the node. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & is the index ID int \\
+\hline
+\end{DoxyParams}
+\index{Node@{Node}!Set\+Location@{Set\+Location}}
+\index{Set\+Location@{Set\+Location}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Set\+Location(\+Location node\+\_\+location)}{SetLocation(Location node_location)}}]{\setlength{\rightskip}{0pt plus 5cm}void Node\+::\+Set\+Location (
+\begin{DoxyParamCaption}
+\item[{{\bf Location}}]{node\+\_\+location}
+\end{DoxyParamCaption}
+)}\hypertarget{classNode_af16ff69ab235ae2f2270a5f8f2b9816a}{}\label{classNode_af16ff69ab235ae2f2270a5f8f2b9816a}
+
+
+Stores the location of current node. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em node\+\_\+location} & is the location of the node\\
+\hline
+\mbox{\tt in}  & {\em node\+\_\+location} & is the location of the node \hyperlink{structLocation}{Location} \\
+\hline
+\end{DoxyParams}
+\index{Node@{Node}!Set\+Parent@{Set\+Parent}}
+\index{Set\+Parent@{Set\+Parent}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Set\+Parent(int index)}{SetParent(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}void Node\+::\+Set\+Parent (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{classNode_a315c36c92f2c4b33d43bb1c6bb66231c}{}\label{classNode_a315c36c92f2c4b33d43bb1c6bb66231c}
+
+
+Sets parent of the current node to index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & is the index of the parent node int \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Node_8hpp}{Node.\+hpp}\item 
+app/\hyperlink{Node_8cpp}{Node.\+cpp}\end{DoxyCompactItemize}

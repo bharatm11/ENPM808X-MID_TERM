@@ -1,0 +1,74 @@
+\hypertarget{classClosedList}{}\section{Closed\+List Class Reference}
+\label{classClosedList}\index{Closed\+List@{Closed\+List}}
+
+
+Class for \hyperlink{classClosedList}{Closed\+List}. This is a child class of class \hyperlink{classLists}{Lists}.  
+
+
+
+
+{\ttfamily \#include $<$Closed\+List.\+hpp$>$}
+
+
+
+Inheritance diagram for Closed\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{classClosedList__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Closed\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{classClosedList__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClosedList_a3edc6d26cbad0d801b97a8f6fe4359b3}{Closed\+List} ()\hypertarget{classClosedList_a3edc6d26cbad0d801b97a8f6fe4359b3}{}\label{classClosedList_a3edc6d26cbad0d801b97a8f6fe4359b3}
+
+\begin{DoxyCompactList}\small\item\em Class constructor for \hyperlink{classClosedList}{Closed\+List} object. \end{DoxyCompactList}\item 
+bool \hyperlink{classClosedList_a0fbb754cdf3e06b46f5716d481c5f663}{Not\+In\+List} (const std\+::vector$<$ \hyperlink{classNode}{Node} $>$ \&list, const int \&id)
+\begin{DoxyCompactList}\small\item\em Checks if a node is present in the given list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class for \hyperlink{classClosedList}{Closed\+List}. This is a child class of class \hyperlink{classLists}{Lists}. 
+
+\subsection{Member Function Documentation}
+\index{Closed\+List@{Closed\+List}!Not\+In\+List@{Not\+In\+List}}
+\index{Not\+In\+List@{Not\+In\+List}!Closed\+List@{Closed\+List}}
+\subsubsection[{\texorpdfstring{Not\+In\+List(const std\+::vector$<$ Node $>$ \&list, const int \&id)}{NotInList(const std::vector< Node > &list, const int &id)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Closed\+List\+::\+Not\+In\+List (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf Node} $>$ \&}]{list, }
+\item[{const int \&}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{classClosedList_a0fbb754cdf3e06b46f5716d481c5f663}{}\label{classClosedList_a0fbb754cdf3e06b46f5716d481c5f663}
+
+
+Checks if a node is present in the given list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em list} & (\hyperlink{classOpenList}{Open\+List} or \hyperlink{classClosedList}{Closed\+List}) is the list in which node is to be checked \\
+\hline
+\mbox{\tt in}  & {\em id} & is the ID of the node whose presence needs to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true is node with node ID \char`\"{}id\char`\"{} is present in the list 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{ClosedList_8hpp}{Closed\+List.\+hpp}\item 
+app/\hyperlink{ClosedList_8cpp}{Closed\+List.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,343 @@
+\hypertarget{classAstar}{}\section{Astar Class Reference}
+\label{classAstar}\index{Astar@{Astar}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAstar_a92ea86949bfcf38f6aba547a543b0c95}{Astar} (\hyperlink{classNode}{Node} start\+\_\+pt, \hyperlink{classNode}{Node} goal\+\_\+pt)
+\begin{DoxyCompactList}\small\item\em constructor for \hyperlink{classAstar}{Astar}, initializes the current\+\_\+node\+\_\+ to the values of the starting search point and adds the current node to the closed list. \end{DoxyCompactList}\item 
+int \hyperlink{classAstar_aca8b2e61d8825d9f2a6598234987b974}{CalculateH} (\hyperlink{structLocation}{Location} current\+\_\+loc, \hyperlink{structLocation}{Location} goal\+\_\+pt)
+\begin{DoxyCompactList}\small\item\em calculates the cost to go using Manhattan distance \end{DoxyCompactList}\item 
+int \hyperlink{classAstar_a5c562607083127a12c9a271e88e973d4}{CalculateG} (\hyperlink{classNode}{Node} current\+\_\+node, \hyperlink{classNode}{Node} next\+\_\+node)
+\begin{DoxyCompactList}\small\item\em determines the cost to come \end{DoxyCompactList}\item 
+int \hyperlink{classAstar_ab8a375a75508deeff448a073064aa1fe}{CalculateF} (const int \&H, const int \&G)
+\begin{DoxyCompactList}\small\item\em calculates the G cost for next\+\_\+node \end{DoxyCompactList}\item 
+void \hyperlink{classAstar_aaf63d830e7e760ec0a687584ae4b777f}{Re\+CalculateG} (\hyperlink{classNode}{Node} current\+\_\+node, \hyperlink{classNode}{Node} next\+\_\+node)
+\begin{DoxyCompactList}\small\item\em calculates F cost \end{DoxyCompactList}\item 
+void \hyperlink{classAstar_ae5e558c5849378e1d22b1f218b51916c}{Set\+Curent\+Node} ()
+\begin{DoxyCompactList}\small\item\em Rexamins G cost for nodes already in Open list. \end{DoxyCompactList}\item 
+void \hyperlink{classAstar_a4586f8da059cd55dde359e4af6f91b34}{Set\+Parent\+Node} (\hyperlink{classNode}{Node} child\+\_\+node, \hyperlink{classNode}{Node} parent\+\_\+node)
+\begin{DoxyCompactList}\small\item\em assigns next\+\_\+node to current\+\_\+node \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classNode}{Node} $>$ \hyperlink{classAstar_a6a489aeb6fbf448665889079480ed0ef}{Find\+Neighbors} (\hyperlink{classMap}{Map} map)
+\begin{DoxyCompactList}\small\item\em points the chil\textquotesingle{}s node parent ID to parent\+\_\+node ID \end{DoxyCompactList}\item 
+int \hyperlink{classAstar_a48c9d3c893777f53b0b60bab9374748a}{Get\+Move\+Cost} (\hyperlink{classNode}{Node} current\+\_\+node, \hyperlink{classNode}{Node} next\+\_\+node)
+\begin{DoxyCompactList}\small\item\em generates new nodes and initializes them \end{DoxyCompactList}\item 
+bool \hyperlink{classAstar_a10cc31d1f9217c5b03ec6d4167e8c639}{Is\+Goal} (\hyperlink{classNode}{Node} current\+\_\+node)
+\begin{DoxyCompactList}\small\item\em checks if current node is the target node \end{DoxyCompactList}\item 
+bool \hyperlink{classAstar_a95ddd1acd8f580a0dff7ab4596a11e17}{Is\+Start} (\hyperlink{classNode}{Node} current\+\_\+node)
+\begin{DoxyCompactList}\small\item\em checks if current node is the start node \end{DoxyCompactList}\item 
+void \hyperlink{classAstar_ab5e2af854f42ac2ee12827876175bb3b}{Generate\+Path} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ map)
+\begin{DoxyCompactList}\small\item\em generates the optimal path leading from goal to start point \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Astar@{Astar}!Astar@{Astar}}
+\index{Astar@{Astar}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{Astar(\+Node start\+\_\+pt, Node goal\+\_\+pt)}{Astar(Node start_pt, Node goal_pt)}}]{\setlength{\rightskip}{0pt plus 5cm}Astar\+::\+Astar (
+\begin{DoxyParamCaption}
+\item[{{\bf Node}}]{start\+\_\+pt, }
+\item[{{\bf Node}}]{goal\+\_\+pt}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_a92ea86949bfcf38f6aba547a543b0c95}{}\label{classAstar_a92ea86949bfcf38f6aba547a543b0c95}
+
+
+constructor for \hyperlink{classAstar}{Astar}, initializes the current\+\_\+node\+\_\+ to the values of the starting search point and adds the current node to the closed list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+\_\+pt} & is initial algorithm entry point \\
+\hline
+\mbox{\tt in}  & {\em goal\+\_\+pt,it} & is the terminal point the algorithm is searching for. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Astar@{Astar}!CalculateF@{CalculateF}}
+\index{CalculateF@{CalculateF}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{Calculate\+F(const int \&\+H, const int \&\+G)}{CalculateF(const int &H, const int &G)}}]{\setlength{\rightskip}{0pt plus 5cm}int Astar\+::\+CalculateF (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{H, }
+\item[{const int \&}]{G}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_ab8a375a75508deeff448a073064aa1fe}{}\label{classAstar_ab8a375a75508deeff448a073064aa1fe}
+
+
+calculates the G cost for next\+\_\+node 
+
+calculates F cost
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\+\_\+node} & is the last node reached by the algorithm \\
+\hline
+\mbox{\tt in}  & {\em next\+\_\+node} & is the neighbor node being examined \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+G cost of next node
+\end{DoxyReturn}
+sums up current node G cost and cost to come of next node
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em H} & is the cost to come \\
+\hline
+\mbox{\tt in}  & {\em G} & is the cost to go \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+and int F cost the sum of H and G 
+\end{DoxyReturn}
+\index{Astar@{Astar}!CalculateG@{CalculateG}}
+\index{CalculateG@{CalculateG}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{Calculate\+G(\+Node current\+\_\+node, Node next\+\_\+node)}{CalculateG(Node current_node, Node next_node)}}]{\setlength{\rightskip}{0pt plus 5cm}int Astar\+::\+CalculateG (
+\begin{DoxyParamCaption}
+\item[{{\bf Node}}]{current\+\_\+node, }
+\item[{{\bf Node}}]{next\+\_\+node}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_a5c562607083127a12c9a271e88e973d4}{}\label{classAstar_a5c562607083127a12c9a271e88e973d4}
+
+
+determines the cost to come 
+
+calculates the G cost for next\+\_\+node
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\+\_\+node} & is the last node reached by the algorithm \\
+\hline
+\mbox{\tt in}  & {\em next\+\_\+node} & is the neighbor node being examined \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cost to come from current node to next node being 10 or 14
+\end{DoxyReturn}
+vertical or horizontal move cost=10 , diagonal move cost=14
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\+\_\+node} & is the last node reached by the algorithm \\
+\hline
+\mbox{\tt in}  & {\em next\+\_\+node} & is the neighbor node being examined \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+G cost of next node
+\end{DoxyReturn}
+sums up current node G cost and cost to come of next node \index{Astar@{Astar}!CalculateH@{CalculateH}}
+\index{CalculateH@{CalculateH}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{Calculate\+H(\+Location current\+\_\+loc, Location goal\+\_\+pt)}{CalculateH(Location current_loc, Location goal_pt)}}]{\setlength{\rightskip}{0pt plus 5cm}int Astar\+::\+CalculateH (
+\begin{DoxyParamCaption}
+\item[{{\bf Location}}]{current\+\_\+loc, }
+\item[{{\bf Location}}]{goal\+\_\+pt}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_aca8b2e61d8825d9f2a6598234987b974}{}\label{classAstar_aca8b2e61d8825d9f2a6598234987b974}
+
+
+calculates the cost to go using Manhattan distance 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\+\_\+loc} & coordinates of current\+\_\+node \\
+\hline
+\mbox{\tt in}  & {\em goal\+\_\+pt} & coordinates of final destination node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the Manhattan distance H. 
+\end{DoxyReturn}
+\index{Astar@{Astar}!Find\+Neighbors@{Find\+Neighbors}}
+\index{Find\+Neighbors@{Find\+Neighbors}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{Find\+Neighbors(\+Map map)}{FindNeighbors(Map map)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Node} $>$ Astar\+::\+Find\+Neighbors (
+\begin{DoxyParamCaption}
+\item[{{\bf Map}}]{map}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_a6a489aeb6fbf448665889079480ed0ef}{}\label{classAstar_a6a489aeb6fbf448665889079480ed0ef}
+
+
+points the chil\textquotesingle{}s node parent ID to parent\+\_\+node ID 
+
+generates new nodes and initializes them
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em child\+\_\+node} & is the node being set \\
+\hline
+\mbox{\tt in}  & {\em parent\+\_\+node} & is the node being pointed to\\
+\hline
+\mbox{\tt in}  & {\em map} & is a 2D vector representing an occupancy grid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of nodes to be added to open list
+\end{DoxyReturn}
+all nodes will be initialized with F,G,H,ID,\hyperlink{structLocation}{Location} values \index{Astar@{Astar}!Generate\+Path@{Generate\+Path}}
+\index{Generate\+Path@{Generate\+Path}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{Generate\+Path(std\+::vector$<$ std\+::vector$<$ int $>$$>$ map)}{GeneratePath(std::vector< std::vector< int >> map)}}]{\setlength{\rightskip}{0pt plus 5cm}void Astar\+::\+Generate\+Path (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$}]{map}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_ab5e2af854f42ac2ee12827876175bb3b}{}\label{classAstar_ab5e2af854f42ac2ee12827876175bb3b}
+
+
+generates the optimal path leading from goal to start point 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map} & 2D occupancy grid\\
+\hline
+\end{DoxyParams}
+the path is saved on the map which is then converted to an img \index{Astar@{Astar}!Get\+Move\+Cost@{Get\+Move\+Cost}}
+\index{Get\+Move\+Cost@{Get\+Move\+Cost}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{Get\+Move\+Cost(\+Node current\+\_\+node, Node next\+\_\+node)}{GetMoveCost(Node current_node, Node next_node)}}]{\setlength{\rightskip}{0pt plus 5cm}int Astar\+::\+Get\+Move\+Cost (
+\begin{DoxyParamCaption}
+\item[{{\bf Node}}]{current\+\_\+node, }
+\item[{{\bf Node}}]{next\+\_\+node}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_a48c9d3c893777f53b0b60bab9374748a}{}\label{classAstar_a48c9d3c893777f53b0b60bab9374748a}
+
+
+generates new nodes and initializes them 
+
+determines the cost to come
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map} & is a 2D vector representing an occupancy grid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of nodes to be added to open list
+\end{DoxyReturn}
+all nodes will be initialized with F,G,H,ID,\hyperlink{structLocation}{Location} values
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\+\_\+node} & is the last node reached by the algorithm \\
+\hline
+\mbox{\tt in}  & {\em next\+\_\+node} & is the neighbor node being examined \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cost to come from current node to next node being 10 or 14
+\end{DoxyReturn}
+vertical or horizontal move cost=10 , diagonal move cost=14 \index{Astar@{Astar}!Is\+Goal@{Is\+Goal}}
+\index{Is\+Goal@{Is\+Goal}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{Is\+Goal(\+Node current\+\_\+node)}{IsGoal(Node current_node)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Astar\+::\+Is\+Goal (
+\begin{DoxyParamCaption}
+\item[{{\bf Node}}]{current\+\_\+node}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_a10cc31d1f9217c5b03ec6d4167e8c639}{}\label{classAstar_a10cc31d1f9217c5b03ec6d4167e8c639}
+
+
+checks if current node is the target node 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\+\_\+node} & is the last node reached by the algorithm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a true if current node is target node 
+\end{DoxyReturn}
+\index{Astar@{Astar}!Is\+Start@{Is\+Start}}
+\index{Is\+Start@{Is\+Start}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{Is\+Start(\+Node current\+\_\+node)}{IsStart(Node current_node)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Astar\+::\+Is\+Start (
+\begin{DoxyParamCaption}
+\item[{{\bf Node}}]{current\+\_\+node}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_a95ddd1acd8f580a0dff7ab4596a11e17}{}\label{classAstar_a95ddd1acd8f580a0dff7ab4596a11e17}
+
+
+checks if current node is the start node 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\+\_\+node} & is the last node reached by the algorithm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a true if current node is start node 
+\end{DoxyReturn}
+\index{Astar@{Astar}!Re\+CalculateG@{Re\+CalculateG}}
+\index{Re\+CalculateG@{Re\+CalculateG}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{Re\+Calculate\+G(\+Node current\+\_\+node, Node next\+\_\+node)}{ReCalculateG(Node current_node, Node next_node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Astar\+::\+Re\+CalculateG (
+\begin{DoxyParamCaption}
+\item[{{\bf Node}}]{current\+\_\+node, }
+\item[{{\bf Node}}]{next\+\_\+node}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_aaf63d830e7e760ec0a687584ae4b777f}{}\label{classAstar_aaf63d830e7e760ec0a687584ae4b777f}
+
+
+calculates F cost 
+
+Rexamins G cost for nodes already in Open list.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em H} & is the cost to come \\
+\hline
+\mbox{\tt in}  & {\em G} & is the cost to go \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+and int F cost the sum of H and G
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\+\_\+node} & is the last node reached by the algorithm \\
+\hline
+\mbox{\tt in}  & {\em next\+\_\+node} & is the neighbor node being examined\\
+\hline
+\end{DoxyParams}
+new g cost = g cost of current node + cost to move to next node \index{Astar@{Astar}!Set\+Curent\+Node@{Set\+Curent\+Node}}
+\index{Set\+Curent\+Node@{Set\+Curent\+Node}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{Set\+Curent\+Node()}{SetCurentNode()}}]{\setlength{\rightskip}{0pt plus 5cm}void Astar\+::\+Set\+Curent\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_ae5e558c5849378e1d22b1f218b51916c}{}\label{classAstar_ae5e558c5849378e1d22b1f218b51916c}
+
+
+Rexamins G cost for nodes already in Open list. 
+
+assigns next\+\_\+node to current\+\_\+node
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\+\_\+node} & is the last node reached by the algorithm \\
+\hline
+\mbox{\tt in}  & {\em next\+\_\+node} & is the neighbor node being examined\\
+\hline
+\end{DoxyParams}
+new g cost = g cost of current node + cost to move to next node
+
+uses private members to set the the next node with lowest F in open list as the new current\+\_\+node \index{Astar@{Astar}!Set\+Parent\+Node@{Set\+Parent\+Node}}
+\index{Set\+Parent\+Node@{Set\+Parent\+Node}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{Set\+Parent\+Node(\+Node child\+\_\+node, Node parent\+\_\+node)}{SetParentNode(Node child_node, Node parent_node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Astar\+::\+Set\+Parent\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Node}}]{child\+\_\+node, }
+\item[{{\bf Node}}]{parent\+\_\+node}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_a4586f8da059cd55dde359e4af6f91b34}{}\label{classAstar_a4586f8da059cd55dde359e4af6f91b34}
+
+
+assigns next\+\_\+node to current\+\_\+node 
+
+points the chil\textquotesingle{}s node parent ID to parent\+\_\+node ID
+
+uses private members to set the the next node with lowest F in open list as the new current\+\_\+node
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em child\+\_\+node} & is the node being set \\
+\hline
+\mbox{\tt in}  & {\em parent\+\_\+node} & is the node being pointed to \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Astar_8hpp}{Astar.\+hpp}\item 
+app/\hyperlink{Astar_8cpp}{Astar.\+cpp}\end{DoxyCompactItemize}

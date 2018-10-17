@@ -1,0 +1,110 @@
+\hypertarget{classMap}{}\section{Map Class Reference}
+\label{classMap}\index{Map@{Map}}
+
+
+Class for \hyperlink{classMap}{Map}.  
+
+
+
+
+{\ttfamily \#include $<$Map.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{classMap_a3e039af82e749384fc9f4c86e5d45a71}{Read\+Map} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ map)
+\begin{DoxyCompactList}\small\item\em Reads the original map from main file. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{classMap_a1f528c82fddfa3c592df6f0519a06297}{Update\+Map} (\hyperlink{structLocation}{Location} location, std\+::vector$<$ std\+::vector$<$ int $>$$>$ map)
+\begin{DoxyCompactList}\small\item\em Updates the map to keep track of visited nodes. \end{DoxyCompactList}\item 
+void \hyperlink{classMap_af62082268a739e6f49f64f12658889f6}{Draw\+Map} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ map)
+\begin{DoxyCompactList}\small\item\em Draws the figure of the map. \end{DoxyCompactList}\item 
+bool \hyperlink{classMap_a45d7eb0b2246fb32ee8f1577cfbcb444}{Is\+Occupied} (\hyperlink{structLocation}{Location} location)
+\begin{DoxyCompactList}\small\item\em Checks if a node is occupied by an obstacle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for \hyperlink{classMap}{Map}. 
+
+\subsection{Member Function Documentation}
+\index{Map@{Map}!Draw\+Map@{Draw\+Map}}
+\index{Draw\+Map@{Draw\+Map}!Map@{Map}}
+\subsubsection[{\texorpdfstring{Draw\+Map(std\+::vector$<$ std\+::vector$<$ int $>$$>$ map)}{DrawMap(std::vector< std::vector< int >> map)}}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+::\+Draw\+Map (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$}]{map}
+\end{DoxyParamCaption}
+)}\hypertarget{classMap_af62082268a739e6f49f64f12658889f6}{}\label{classMap_af62082268a739e6f49f64f12658889f6}
+
+
+Draws the figure of the map. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map} & is the current map of the robot\textquotesingle{}s world as a 2d vector \\
+\hline
+\end{DoxyParams}
+\index{Map@{Map}!Is\+Occupied@{Is\+Occupied}}
+\index{Is\+Occupied@{Is\+Occupied}!Map@{Map}}
+\subsubsection[{\texorpdfstring{Is\+Occupied(\+Location location)}{IsOccupied(Location location)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Map\+::\+Is\+Occupied (
+\begin{DoxyParamCaption}
+\item[{{\bf Location}}]{location}
+\end{DoxyParamCaption}
+)}\hypertarget{classMap_a45d7eb0b2246fb32ee8f1577cfbcb444}{}\label{classMap_a45d7eb0b2246fb32ee8f1577cfbcb444}
+
+
+Checks if a node is occupied by an obstacle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em location} & is the location of the node that needs to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true if node is occupied 
+\end{DoxyReturn}
+\index{Map@{Map}!Read\+Map@{Read\+Map}}
+\index{Read\+Map@{Read\+Map}!Map@{Map}}
+\subsubsection[{\texorpdfstring{Read\+Map(std\+::vector$<$ std\+::vector$<$ int $>$$>$ map)}{ReadMap(std::vector< std::vector< int >> map)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::vector$<$ int $>$ $>$ Map\+::\+Read\+Map (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$}]{map}
+\end{DoxyParamCaption}
+)}\hypertarget{classMap_a3e039af82e749384fc9f4c86e5d45a71}{}\label{classMap_a3e039af82e749384fc9f4c86e5d45a71}
+
+
+Reads the original map from main file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map} & is the map of the robot\textquotesingle{}s world as a 2d vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the map of the world as a 2d vector 
+\end{DoxyReturn}
+\index{Map@{Map}!Update\+Map@{Update\+Map}}
+\index{Update\+Map@{Update\+Map}!Map@{Map}}
+\subsubsection[{\texorpdfstring{Update\+Map(\+Location location, std\+::vector$<$ std\+::vector$<$ int $>$$>$ map)}{UpdateMap(Location location, std::vector< std::vector< int >> map)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::vector$<$ int $>$ $>$ Map\+::\+Update\+Map (
+\begin{DoxyParamCaption}
+\item[{{\bf Location}}]{location, }
+\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$}]{map}
+\end{DoxyParamCaption}
+)}\hypertarget{classMap_a1f528c82fddfa3c592df6f0519a06297}{}\label{classMap_a1f528c82fddfa3c592df6f0519a06297}
+
+
+Updates the map to keep track of visited nodes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map} & is the current map of the robot\textquotesingle{}s world as a 2d vector \\
+\hline
+\mbox{\tt in}  & {\em location} & is the location of the node that needs to be updated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the updated map of the world as a 2d vector 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Map_8hpp}{Map.\+hpp}\item 
+app/Map.\+cpp\end{DoxyCompactItemize}

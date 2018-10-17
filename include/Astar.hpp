@@ -120,7 +120,7 @@ class Astar {
  * @param [in]  map 2D occupancy grid
  * @details the path is saved on the map which is then converted to an img
  */
-  void GeneratePath(std::vector<std::vector<int>>& map);
+  void GeneratePath(std::vector<std::vector<int>> map);
 };
 
 

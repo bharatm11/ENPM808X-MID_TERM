@@ -1,0 +1,123 @@
+\hypertarget{classLists}{}\section{Lists Class Reference}
+\label{classLists}\index{Lists@{Lists}}
+
+
+Parent Class for \hyperlink{classLists}{Lists}.  
+
+
+
+
+{\ttfamily \#include $<$Lists.\+hpp$>$}
+
+
+
+Inheritance diagram for Lists\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classLists__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLists_aed567c0eb29d02a7ac16fb78ee2a9038}{Add} (std\+::vector$<$ \hyperlink{classNode}{Node} $>$ \&list, \hyperlink{classNode}{Node} node)
+\begin{DoxyCompactList}\small\item\em Adds a node to the list given as input. \end{DoxyCompactList}\item 
+void \hyperlink{classLists_af907564ceb484798f5b9f2f64d34f283}{Remove} (std\+::vector$<$ \hyperlink{classNode}{Node} $>$ \&list, std\+::vector$<$ \hyperlink{classNode}{Node} $>$\+::iterator iter)
+\begin{DoxyCompactList}\small\item\em Removes a node from the list given as input. \end{DoxyCompactList}\item 
+void \hyperlink{classLists_adc452dcc02bc2f45d43aa9e41e9a57a5}{Sort\+List} (std\+::vector$<$ \hyperlink{classNode}{Node} $>$ \&list)
+\begin{DoxyCompactList}\small\item\em Sorts the lists in descending order of total cost. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classLists_a2951258a0e7df5212461cbb785bd02f4}{Compare\+Node} (\hyperlink{classNode}{Node} \&node1, \hyperlink{classNode}{Node} \&node2)
+\begin{DoxyCompactList}\small\item\em Compares the total costs of 2 nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parent Class for \hyperlink{classLists}{Lists}. 
+
+\subsection{Member Function Documentation}
+\index{Lists@{Lists}!Add@{Add}}
+\index{Add@{Add}!Lists@{Lists}}
+\subsubsection[{\texorpdfstring{Add(std\+::vector$<$ Node $>$ \&list, Node node)}{Add(std::vector< Node > &list, Node node)}}]{\setlength{\rightskip}{0pt plus 5cm}void Lists\+::\+Add (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Node} $>$ \&}]{list, }
+\item[{{\bf Node}}]{node}
+\end{DoxyParamCaption}
+)}\hypertarget{classLists_aed567c0eb29d02a7ac16fb78ee2a9038}{}\label{classLists_aed567c0eb29d02a7ac16fb78ee2a9038}
+
+
+Adds a node to the list given as input. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em list} & (\hyperlink{classOpenList}{Open\+List} or \hyperlink{classClosedList}{Closed\+List}) is the list to which node is added \\
+\hline
+\mbox{\tt in}  & {\em node} & is the node on the map that has to be added \\
+\hline
+\end{DoxyParams}
+\index{Lists@{Lists}!Compare\+Node@{Compare\+Node}}
+\index{Compare\+Node@{Compare\+Node}!Lists@{Lists}}
+\subsubsection[{\texorpdfstring{Compare\+Node(\+Node \&node1, Node \&node2)}{CompareNode(Node &node1, Node &node2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Lists\+::\+Compare\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Node} \&}]{node1, }
+\item[{{\bf Node} \&}]{node2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classLists_a2951258a0e7df5212461cbb785bd02f4}{}\label{classLists_a2951258a0e7df5212461cbb785bd02f4}
+
+
+Compares the total costs of 2 nodes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em node} & 1 is the first node for comparison \\
+\hline
+\mbox{\tt in}  & {\em node} & 2 is the second node for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if cost of node1 is greater than node2 
+\end{DoxyReturn}
+\index{Lists@{Lists}!Remove@{Remove}}
+\index{Remove@{Remove}!Lists@{Lists}}
+\subsubsection[{\texorpdfstring{Remove(std\+::vector$<$ Node $>$ \&list, std\+::vector$<$ Node $>$\+::iterator iter)}{Remove(std::vector< Node > &list, std::vector< Node >::iterator iter)}}]{\setlength{\rightskip}{0pt plus 5cm}void Lists\+::\+Remove (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Node} $>$ \&}]{list, }
+\item[{std\+::vector$<$ {\bf Node} $>$\+::iterator}]{iter}
+\end{DoxyParamCaption}
+)}\hypertarget{classLists_af907564ceb484798f5b9f2f64d34f283}{}\label{classLists_af907564ceb484798f5b9f2f64d34f283}
+
+
+Removes a node from the list given as input. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em list} & (\hyperlink{classOpenList}{Open\+List} or \hyperlink{classClosedList}{Closed\+List}) is the list from which node is to be removed \\
+\hline
+\mbox{\tt in}  & {\em node} & is the node on the map that has to be removed \\
+\hline
+\end{DoxyParams}
+\index{Lists@{Lists}!Sort\+List@{Sort\+List}}
+\index{Sort\+List@{Sort\+List}!Lists@{Lists}}
+\subsubsection[{\texorpdfstring{Sort\+List(std\+::vector$<$ Node $>$ \&list)}{SortList(std::vector< Node > &list)}}]{\setlength{\rightskip}{0pt plus 5cm}void Lists\+::\+Sort\+List (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Node} $>$ \&}]{list}
+\end{DoxyParamCaption}
+)}\hypertarget{classLists_adc452dcc02bc2f45d43aa9e41e9a57a5}{}\label{classLists_adc452dcc02bc2f45d43aa9e41e9a57a5}
+
+
+Sorts the lists in descending order of total cost. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em list} & (\hyperlink{classOpenList}{Open\+List} or \hyperlink{classClosedList}{Closed\+List}) is the list that has to be sorted \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Lists_8hpp}{Lists.\+hpp}\item 
+app/Lists.\+cpp\end{DoxyCompactItemize}

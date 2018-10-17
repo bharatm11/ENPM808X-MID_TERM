@@ -1,0 +1,22 @@
+bharat@bharat-Inspiron-15-7000-Gaming:~/enpm_soft_dev_course/ENPM808X-MID_TERM$ cpplint app/Astar.cpp app/main.cpp app/Node.cpp app/ClosedList.cpp app/Lists.cpp app/Map.cpp app/OpenList.cpp include/Astar.hpp include/lib.hpp include/Map.hpp include/OpenList.hpp include/ClosedList.hpp include/Lists.hpp include/Node.hpp 
+Done processing app/Astar.cpp
+Done processing app/main.cpp
+Done processing app/Node.cpp
+Done processing app/ClosedList.cpp
+Done processing app/Lists.cpp
+Done processing app/Map.cpp
+Done processing app/OpenList.cpp
+Done processing include/Astar.hpp
+Done processing include/lib.hpp
+Done processing include/Map.hpp
+Done processing include/OpenList.hpp
+Done processing include/ClosedList.hpp
+include/Lists.hpp:27:  Is this a non-const reference? If so, make const or use a pointer: std::vector<Node>& list  [runtime/references] [2]
+include/Lists.hpp:34:  Is this a non-const reference? If so, make const or use a pointer: std::vector<Node>& list  [runtime/references] [2]
+include/Lists.hpp:40:  Is this a non-const reference? If so, make const or use a pointer: std::vector<Node>& list  [runtime/references] [2]
+include/Lists.hpp:48:  Is this a non-const reference? If so, make const or use a pointer: Node &node1  [runtime/references] [2]
+include/Lists.hpp:48:  Is this a non-const reference? If so, make const or use a pointer: Node &node2  [runtime/references] [2]
+Done processing include/Lists.hpp
+Done processing include/Node.hpp
+Total errors found: 5
+

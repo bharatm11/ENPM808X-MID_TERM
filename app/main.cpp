@@ -10,8 +10,7 @@
 #include <iostream>
 #include <lib.hpp>
 
-int main()
-{
+int main() {
   /*
 // create a node for start point
   //create a node for end point

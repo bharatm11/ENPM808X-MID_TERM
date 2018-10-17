@@ -43,7 +43,7 @@ bool OpenList::InList(const std::vector<Node>& list, const int& id) {
 * @param [in] list (OpenList or ClosedList) is the list in which node is to be checked
 * @return ID of the node with the lowest total cost
 */
-std::vector<Node>::size_type OpenList::IsLowestF(std::vector<Node>& list) {
+std::vector<Node>::size_type OpenList::IsLowestF(std::vector<Node> list) {
   std::vector<Node>::size_type i = list.size() - 1;
   std::vector<Node>::size_type lowest_f = list.size() - 1;
 

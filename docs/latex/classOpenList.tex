@@ -1,0 +1,95 @@
+\hypertarget{classOpenList}{}\section{Open\+List Class Reference}
+\label{classOpenList}\index{Open\+List@{Open\+List}}
+
+
+Class for \hyperlink{classOpenList}{Open\+List}. This is a child class of class \hyperlink{classLists}{Lists}.  
+
+
+
+
+{\ttfamily \#include $<$Open\+List.\+hpp$>$}
+
+
+
+Inheritance diagram for Open\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classOpenList__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Open\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classOpenList__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOpenList_a31b619dcd6456acdfec2b38eb1c8337d}{Open\+List} ()\hypertarget{classOpenList_a31b619dcd6456acdfec2b38eb1c8337d}{}\label{classOpenList_a31b619dcd6456acdfec2b38eb1c8337d}
+
+\begin{DoxyCompactList}\small\item\em Class constructor for \hyperlink{classOpenList}{Open\+List} object. \end{DoxyCompactList}\item 
+bool \hyperlink{classOpenList_ac5f9e1949bc4732fdfe7d84f6a7efcf1}{In\+List} (const std\+::vector$<$ \hyperlink{classNode}{Node} $>$ \&list, const int \&id)
+\begin{DoxyCompactList}\small\item\em Checks if a node is present in the given list. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classNode}{Node} $>$\+::size\+\_\+type \hyperlink{classOpenList_a09ff2042663d5c504562c5fabfba7a61}{Is\+LowestF} (std\+::vector$<$ \hyperlink{classNode}{Node} $>$ list)
+\begin{DoxyCompactList}\small\item\em Returns the node ID of the node with the lowest total cost. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class for \hyperlink{classOpenList}{Open\+List}. This is a child class of class \hyperlink{classLists}{Lists}. 
+
+\subsection{Member Function Documentation}
+\index{Open\+List@{Open\+List}!In\+List@{In\+List}}
+\index{In\+List@{In\+List}!Open\+List@{Open\+List}}
+\subsubsection[{\texorpdfstring{In\+List(const std\+::vector$<$ Node $>$ \&list, const int \&id)}{InList(const std::vector< Node > &list, const int &id)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Open\+List\+::\+In\+List (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf Node} $>$ \&}]{list, }
+\item[{const int \&}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{classOpenList_ac5f9e1949bc4732fdfe7d84f6a7efcf1}{}\label{classOpenList_ac5f9e1949bc4732fdfe7d84f6a7efcf1}
+
+
+Checks if a node is present in the given list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em list} & (\hyperlink{classOpenList}{Open\+List} or \hyperlink{classClosedList}{Closed\+List}) is the list in which node is to be checked \\
+\hline
+\mbox{\tt in}  & {\em id} & is the ID of the node whose presence needs to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true is node with node ID \char`\"{}id\char`\"{} is present in the list 
+\end{DoxyReturn}
+\index{Open\+List@{Open\+List}!Is\+LowestF@{Is\+LowestF}}
+\index{Is\+LowestF@{Is\+LowestF}!Open\+List@{Open\+List}}
+\subsubsection[{\texorpdfstring{Is\+Lowest\+F(std\+::vector$<$ Node $>$ list)}{IsLowestF(std::vector< Node > list)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Node} $>$\+::size\+\_\+type Open\+List\+::\+Is\+LowestF (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Node} $>$}]{list}
+\end{DoxyParamCaption}
+)}\hypertarget{classOpenList_a09ff2042663d5c504562c5fabfba7a61}{}\label{classOpenList_a09ff2042663d5c504562c5fabfba7a61}
+
+
+Returns the node ID of the node with the lowest total cost. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em list} & (\hyperlink{classOpenList}{Open\+List} or \hyperlink{classClosedList}{Closed\+List}) is the list in which node is to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID of the node with the lowest total cost 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{OpenList_8hpp}{Open\+List.\+hpp}\item 
+app/Open\+List.\+cpp\end{DoxyCompactItemize}

@@ -41,6 +41,6 @@ class OpenList : public Lists {
   * @param [in] list (OpenList or ClosedList) is the list in which node is to be checked
   * @return ID of the node with the lowest total cost
   */
-  std::vector<Node>::size_type IsLowestF(std::vector<Node>& list);
+  std::vector<Node>::size_type IsLowestF(std::vector<Node> list);
 };
 #endif  //  ENPM_SOFT_DEV_COURSE_ENPM808X_MID_TERM_INCLUDE_OPENLIST_HPP_
