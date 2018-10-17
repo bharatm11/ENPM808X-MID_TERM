@@ -32,6 +32,7 @@ until the goal node has been reached.
 
 ## TODO
 1. Return an optimal path plan between 2 points using the A* algorithm.
+  Due to limited time, the implementation was not finished.
 
 ## SIP process link:
 
@@ -66,7 +67,7 @@ After completing installation, type:
 ./test/cpp-test
 ```
 
-## doxygen documentation
+## Doxygen Documentation
 ```
 sudo apt install doxygen
 cd <path to repository>
