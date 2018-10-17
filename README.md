@@ -55,13 +55,13 @@ make
 ```
 ## Run demo
 
-After the Build step, type:
+After completing installation, type:
 ```
 ./app/shell-app
 ```
 ## Run tests
 
-After the Build step, type:
+After completing installation, type:
 ```
 ./test/cpp-test
 ```
@@ -72,4 +72,18 @@ sudo apt install doxygen
 cd <path to repository>
 mkdir docs
 cd docs
-doxygen -g Midterm
+doxygen -g config
+```
+Open the Doxygen congiguration file "config" and update the following parameters:
+
+PROJECT_NAME           = "ENPM808X-MID_TERM"
+INPUT                  = app/ include/ test/
+OUTPUT_DIRECTORY       = docs
+
+In terminal, type:
+```
+cd ..
+doxygen config
+```
+
+
