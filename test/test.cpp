@@ -476,3 +476,59 @@ TEST(Map2, CheckIsOccupied) {
   my_location.y=1;
   EXPECT_EQ(true,my_map.IsOccupied(my_location));
 }
+
+
+TEST(Astar1, CheckCalculateH) {
+  Location my_location;
+  my_location.x=1;
+  my_location.y=1;
+  Location my_location2;
+  my_location2.x=2;
+  my_location2.y=2;
+  Node node1, node2;
+  node1.SetId(1);
+  node1.SetF(1);
+  node1.SetH(1);
+  node2.SetId(2);
+  node2.SetF(1);
+  node2.SetH(2);
+  Astar astar(node1, node2);
+  EXPECT_EQ(2,astar.CalculateH(my_location, my_location2));
+}
+
+
+TEST(Astar2, CheckGetMoveCost) {
+  Location my_location;
+  my_location.x=1;
+  my_location.y=1;
+  Location my_location2;
+  my_location2.x=2;
+  my_location2.y=2;
+  Node node1, node2;
+  node1.SetId(1);
+  node1.SetF(1);
+  node1.SetH(1);
+  node2.SetId(2);
+  node2.SetF(1);
+  node2.SetH(2);
+  Astar astar(node1, node2);
+  EXPECT_EQ(10, astar.GetMoveCost(node1, node2));
+}
+
+TEST(Astar3, CheckCalculateG) {
+  Location my_location;
+  my_location.x=1;
+  my_location.y=1;
+  Location my_location2;
+  my_location2.x=2;
+  my_location2.y=2;
+  Node node1, node2;
+  node1.SetId(1);
+  node1.SetF(1);
+  node1.SetH(1);
+  node2.SetId(2);
+  node2.SetF(1);
+  node2.SetH(2);
+  Astar astar(node1, node2);
+  EXPECT_EQ(10, astar.CalculateG(node1, node2));
+}
