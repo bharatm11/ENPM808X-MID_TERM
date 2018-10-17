@@ -532,3 +532,17 @@ TEST(Astar3, CheckCalculateG) {
   Astar astar(node1, node2);
   EXPECT_EQ(10, astar.CalculateG(node1, node2));
 }
+
+TEST(Astar4, CheckCalculateF) {
+  int h=5;
+  int g=10;
+  Node node1, node2;
+  node1.SetId(1);
+  node1.SetF(1);
+  node1.SetH(1);
+  node2.SetId(2);
+  node2.SetF(1);
+  node2.SetH(2);
+  Astar astar(node1, node2);
+  EXPECT_EQ(15, astar.CalculateF(h,g));
+}
