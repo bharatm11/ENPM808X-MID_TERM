@@ -41,7 +41,8 @@ https://docs.google.com/spreadsheets/d/15y1zCEGfbNPBTr2xY7Hjac2PuRlEzobuQ20Mx1qX
 
 ## License 
 
-Doxygen license: Copyright © 1997-2016 by Dimitri van Heesch.
+Doxygen license: Copyright © 1997-2016 by Dimitri van Heesch. 
+
 Googletest license: Copyright 2008, Google Inc.
 
 
