@@ -32,6 +32,7 @@ until the goal node has been reached.
 
 ## TODO
 1. Return an optimal path plan between 2 points using the A* algorithm.
+
   Due to limited time, the implementation was not finished.
 
 ## SIP process link:
