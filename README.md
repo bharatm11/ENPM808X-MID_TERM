@@ -77,7 +77,9 @@ doxygen -g config
 Open the Doxygen congiguration file "config" and update the following parameters:
 
 PROJECT_NAME           = "ENPM808X-MID_TERM"
+
 INPUT                  = app/ include/ test/
+
 OUTPUT_DIRECTORY       = docs
 
 In terminal, type:
